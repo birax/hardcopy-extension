@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Weekend hiking plan - Claude</title>
+  </head>
+  <body>
+    <header>
+      <nav aria-label="Main">
+        <a href="/new">New chat</a>
+      </nav>
+    </header>
+    <main>
+      <div class="conversation">
+        <!-- Turn 1: user, identified by data-testid, anchored by an action bar. -->
+        <div class="turn">
+          <div data-testid="user-message">
+            <p>
+              Plan me a <strong>weekend hike</strong> near Snowdonia — I want a route with a
+              <code>gpx</code> file and a packing checklist.
+            </p>
+          </div>
+          <div role="group" aria-label="Message actions">
+            <button data-testid="action-bar-copy" aria-label="Copy">Copy</button>
+            <button data-testid="action-bar-edit" aria-label="Edit">Edit</button>
+          </div>
+        </div>
+
+        <!-- Turn 2: assistant, no sender hook at all — anchored only by its
+             action bar; the extractor must infer the sender from turn order.
+             Exercises headings, lists (nested + ordered), code, table, quote. -->
+        <div class="turn">
+          <div class="response">
+            <p>
+              Here is a two-day plan with <em>escape routes</em> marked. See the
+              <a href="https://example.com/route">route notes</a> for detail.
+            </p>
+            <h3>Packing list</h3>
+            <ul>
+              <li>Water (2l minimum)</li>
+              <li>
+                Map
+                <ul>
+                  <li>paper backup</li>
+                </ul>
+              </li>
+            </ul>
+            <ol>
+              <li>Drive to the trailhead</li>
+              <li>Hike the horseshoe</li>
+            </ol>
+            <pre><code class="language-python">def distance(a, b):
+    return abs(a - b)</code></pre>
+            <table>
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Distance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Saturday</td>
+                  <td>12 km</td>
+                </tr>
+                <tr>
+                  <td>Sunday</td>
+                  <td>9 km</td>
+                </tr>
+              </tbody>
+            </table>
+            <blockquote>
+              <p>Take the first day slowly.</p>
+            </blockquote>
+          </div>
+          <div role="group" aria-label="Message actions">
+            <button data-testid="action-bar-copy" aria-label="Copy">Copy</button>
+            <button data-testid="action-bar-retry" aria-label="Retry">Retry</button>
+          </div>
+        </div>
+
+        <!-- Turn 3: user again. -->
+        <div class="turn">
+          <div data-testid="user-message">
+            <p>Great — swap Sunday for a shorter valley walk.</p>
+          </div>
+          <div role="group" aria-label="Message actions">
+            <button data-testid="action-bar-copy" aria-label="Copy">Copy</button>
+          </div>
+        </div>
+
+        <!-- Turn 4: assistant again, sender inferred from alternation. -->
+        <div class="turn">
+          <div class="response">
+            <p>Done. Sunday is now the Watkin valley path, about 6 km.</p>
+            <p>Total ascent drops to 400 m.</p>
+          </div>
+          <div role="group" aria-label="Message actions">
+            <button data-testid="action-bar-copy" aria-label="Copy">Copy</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Claude</title>
+  </head>
+  <body>
+    <!-- Partial/changed markup: no action bars at all. Messages are only
+         findable via direct sender hooks (user testid, assistant streaming
+         attribute / legacy font-claude-message class). No usable title. -->
+    <div data-testid="user-message">
+      <p>Quick question about CSS grid.</p>
+    </div>
+    <div class="font-claude-message">
+      <p>Use <code>grid-template-columns</code>.</p>
+      <pre><code>display: grid;
+grid-template-columns: repeat(3, 1fr);</code></pre>
+    </div>
+    <div data-testid="user-message">
+      <p>And for centering one item?</p>
+    </div>
+    <div data-is-streaming="false">
+      <p>Set <code>place-self: center</code> on the item.</p>
+    </div>
+  </body>
+</html>
