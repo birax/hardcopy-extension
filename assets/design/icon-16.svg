@@ -1,0 +1,25 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hardcopy icon (16 px variant)">
+  <!--
+    Simplified variant of icon.svg used only for the 16 px raster.
+    Same silhouette — page + dog-ear + speech tail — but larger page,
+    bigger fold, and no text lines (they turn to mush below ~24 px).
+    Keep any shape edits in sync with icon.svg.
+  -->
+  <rect width="128" height="128" rx="28" fill="#0A5B55"/>
+
+  <!-- Page, enlarged for tiny sizes; tail exaggerated so it survives 16 px -->
+  <path fill="#FFFFFF" d="
+    M 40 22
+    H 72
+    L 96 46
+    V 88
+    Q 96 96 88 96
+    H 66
+    L 32 120
+    V 30
+    Q 32 22 40 22
+    Z"/>
+
+  <!-- Dog-ear flap, enlarged to survive 16 px -->
+  <path fill="#9BD4CC" d="M 72 22 L 96 46 H 72 Z"/>
+</svg>

@@ -1,0 +1,42 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hardcopy icon">
+  <!--
+    Hardcopy master icon (see docs/design/design-system.md).
+
+    Concept: a document page whose bottom-left corner extends into a
+    speech-bubble tail (the conversation) and whose top-right corner is
+    dog-eared (the paper document) — "a chat turned into hardcopy".
+    Original artwork; flat, geometric, no text, no Anthropic motifs.
+
+    Colors are the brand palette:
+      tile / text bars  #0A5B55  (teal-700, brand primary)
+      page              #FFFFFF
+      fold flap         #9BD4CC  (teal-200 tint)
+
+    A simplified companion, icon-16.svg, is used for the 16 px raster.
+  -->
+
+  <!-- Tile: gives the mark its own background on any toolbar -->
+  <rect width="128" height="128" rx="28" fill="#0A5B55"/>
+
+  <!-- Page: rounded top-left / bottom-right corners; top-right cut by a
+       20 px dog-ear fold; bottom edge runs into a speech-bubble tail whose
+       left side is collinear with the page's left edge -->
+  <path fill="#FFFFFF" d="
+    M 43 26
+    H 74
+    L 94 46
+    V 91
+    Q 94 98 87 98
+    H 58
+    L 36 114
+    V 33
+    Q 36 26 43 26
+    Z"/>
+
+  <!-- Dog-ear flap, folded down over the page -->
+  <path fill="#9BD4CC" d="M 74 26 L 94 46 H 74 Z"/>
+
+  <!-- Text lines -->
+  <rect x="47" y="56" width="34" height="8" rx="4" fill="#0A5B55"/>
+  <rect x="47" y="72" width="24" height="8" rx="4" fill="#0A5B55"/>
+</svg>
