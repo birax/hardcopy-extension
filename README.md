@@ -31,15 +31,23 @@ with optional inclusion of **thinking blocks, tool use and results, timestamps**
 | Path | Purpose |
 | --- | --- |
 | `LICENSE` | MIT license ([ADR 0005](docs/decisions/0005-mit-license.md)) |
+| `src/entrypoints/` | Extension entrypoints (content script, popup) per [WXT](https://wxt.dev/) convention |
+| `src/lib/` | Shared library code (parser, document model, serializers as they land) |
+| `wxt.config.ts` | WXT / manifest configuration |
+| `.github/workflows/` | CI: typecheck, lint, tests + coverage, chrome/firefox/edge build matrix |
 | `docs/decisions/` | Architecture Decision Records (ADRs) — why things are the way they are |
 | `docs/research/` | Research reports that informed the design |
 | `docs/` | User and developer documentation (grows with the project) |
 
-Source, build, and packaging directories will be added as implementation begins ([ADR 0006](docs/decisions/0006-core-architecture.md) records the stack: WXT + TypeScript, MV3, API-first extraction, an intermediate document model with five serializers).
+[ADR 0006](docs/decisions/0006-core-architecture.md) records the stack: WXT + TypeScript, MV3, API-first extraction, an intermediate document model with five serializers.
 
 ## Installing / building
 
 Not yet — watch this space. Local installation instructions for all four browsers, and store listings for Chrome, Firefox, and Edge (Safari local install documented; App Store later), are part of the v1 milestone.
+
+### Development
+
+The WXT + TypeScript scaffold is in place: `pnpm install`, then `pnpm dev` for a live-reloading build, or `pnpm build` / `pnpm build:firefox` / `pnpm build:edge` for production builds in `.output/`. See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for full setup, commands, and how to load the unpacked extension in each browser.
 
 ## License
 
