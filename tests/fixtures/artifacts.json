@@ -1,0 +1,183 @@
+{
+  "uuid": "2e4a6c8b-0d1f-4e3a-b5c7-9f2d4b6a8c15",
+  "name": "Tip calculator script",
+  "summary": "",
+  "model": "claude-opus-4-5",
+  "created_at": "2026-06-10T14:05:12.870349Z",
+  "updated_at": "2026-06-10T14:11:58.334027Z",
+  "settings": {
+    "preview_feature_uses_artifacts": true
+  },
+  "is_starred": true,
+  "current_leaf_message_uuid": "5f7b9d1c-3e6a-4d8b-a2c4-6e0f8b3d5a71",
+  "chat_messages": [
+    {
+      "uuid": "1a3c5e7d-9b2f-4a6c-8d0e-3f5b7d9a1c48",
+      "parent_message_uuid": "00000000-0000-0000-0000-000000000000",
+      "sender": "human",
+      "index": 0,
+      "created_at": "2026-06-10T14:05:12.870349Z",
+      "updated_at": "2026-06-10T14:05:12.870349Z",
+      "truncated": false,
+      "content": [
+        {
+          "start_timestamp": "2026-06-10T14:05:12.870349Z",
+          "stop_timestamp": "2026-06-10T14:05:12.870349Z",
+          "type": "text",
+          "text": "Write me a tiny Python script that calculates a tip and splits the bill.",
+          "citations": []
+        }
+      ],
+      "attachments": [],
+      "files": [],
+      "files_v2": [],
+      "sync_sources": []
+    },
+    {
+      "uuid": "4d6f8b0a-2c5e-4b7d-9a1c-5e3f7b9d0a26",
+      "parent_message_uuid": "1a3c5e7d-9b2f-4a6c-8d0e-3f5b7d9a1c48",
+      "sender": "assistant",
+      "index": 1,
+      "created_at": "2026-06-10T14:05:17.442901Z",
+      "updated_at": "2026-06-10T14:05:49.870653Z",
+      "truncated": false,
+      "content": [
+        {
+          "start_timestamp": "2026-06-10T14:05:17.556230Z",
+          "stop_timestamp": "2026-06-10T14:05:44.109381Z",
+          "type": "tool_use",
+          "name": "artifacts",
+          "input": {
+            "command": "create",
+            "id": "tip-calculator",
+            "title": "Tip calculator",
+            "type": "application/vnd.ant.code",
+            "language": "python",
+            "content": "def tip(bill: float, percent: float = 12.5) -> float:\n    return round(bill * percent / 100, 2)\n\n\nif __name__ == \"__main__\":\n    bill = float(input(\"Bill amount: \"))\n    print(f\"Tip: {tip(bill)}\")\n"
+          },
+          "message": "Creating tip calculator"
+        },
+        {
+          "start_timestamp": "2026-06-10T14:05:44.203519Z",
+          "stop_timestamp": "2026-06-10T14:05:44.203519Z",
+          "type": "tool_result",
+          "name": "artifacts",
+          "content": [
+            {
+              "type": "text",
+              "text": "OK"
+            }
+          ],
+          "is_error": false
+        },
+        {
+          "start_timestamp": "2026-06-10T14:05:44.298125Z",
+          "stop_timestamp": "2026-06-10T14:05:49.870653Z",
+          "type": "text",
+          "text": "Here's a minimal tip calculator. Run it and enter the bill amount when prompted.",
+          "citations": []
+        }
+      ],
+      "attachments": [],
+      "files": [],
+      "files_v2": [],
+      "sync_sources": []
+    },
+    {
+      "uuid": "8c0e2a4b-6d9f-4c1e-b3a5-7f1d9b4c6e83",
+      "parent_message_uuid": "4d6f8b0a-2c5e-4b7d-9a1c-5e3f7b9d0a26",
+      "sender": "human",
+      "index": 2,
+      "created_at": "2026-06-10T14:08:02.194770Z",
+      "updated_at": "2026-06-10T14:08:02.194770Z",
+      "truncated": false,
+      "content": [
+        {
+          "start_timestamp": "2026-06-10T14:08:02.194770Z",
+          "stop_timestamp": "2026-06-10T14:08:02.194770Z",
+          "type": "text",
+          "text": "Add splitting between diners, and make the default tip 15%.",
+          "citations": []
+        }
+      ],
+      "attachments": [],
+      "files": [],
+      "files_v2": [],
+      "sync_sources": []
+    },
+    {
+      "uuid": "5f7b9d1c-3e6a-4d8b-a2c4-6e0f8b3d5a71",
+      "parent_message_uuid": "8c0e2a4b-6d9f-4c1e-b3a5-7f1d9b4c6e83",
+      "sender": "assistant",
+      "index": 3,
+      "created_at": "2026-06-10T14:08:06.881252Z",
+      "updated_at": "2026-06-10T14:11:58.334027Z",
+      "truncated": false,
+      "content": [
+        {
+          "start_timestamp": "2026-06-10T14:08:07.010926Z",
+          "stop_timestamp": "2026-06-10T14:08:15.667204Z",
+          "type": "tool_use",
+          "name": "artifacts",
+          "input": {
+            "command": "update",
+            "id": "tip-calculator",
+            "old_str": "def tip(bill: float, percent: float = 12.5) -> float:",
+            "new_str": "def tip(bill: float, percent: float = 15.0) -> float:"
+          },
+          "message": "Updating default tip"
+        },
+        {
+          "start_timestamp": "2026-06-10T14:08:15.755481Z",
+          "stop_timestamp": "2026-06-10T14:08:15.755481Z",
+          "type": "tool_result",
+          "name": "artifacts",
+          "content": [
+            {
+              "type": "text",
+              "text": "OK"
+            }
+          ],
+          "is_error": false
+        },
+        {
+          "start_timestamp": "2026-06-10T14:08:15.849377Z",
+          "stop_timestamp": "2026-06-10T14:08:31.402518Z",
+          "type": "tool_use",
+          "name": "artifacts",
+          "input": {
+            "command": "update",
+            "id": "tip-calculator",
+            "old_str": "    bill = float(input(\"Bill amount: \"))\n    print(f\"Tip: {tip(bill)}\")",
+            "new_str": "    bill = float(input(\"Bill amount: \"))\n    diners = int(input(\"Diners: \"))\n    total = bill + tip(bill)\n    print(f\"Tip: {tip(bill)}\")\n    print(f\"Each pays: {round(total / diners, 2)}\")"
+          },
+          "message": "Adding bill splitting"
+        },
+        {
+          "start_timestamp": "2026-06-10T14:08:31.490263Z",
+          "stop_timestamp": "2026-06-10T14:08:31.490263Z",
+          "type": "tool_result",
+          "name": "artifacts",
+          "content": [
+            {
+              "type": "text",
+              "text": "OK"
+            }
+          ],
+          "is_error": false
+        },
+        {
+          "start_timestamp": "2026-06-10T14:08:31.588846Z",
+          "stop_timestamp": "2026-06-10T14:11:58.334027Z",
+          "type": "text",
+          "text": "Done — the default tip is now 15% and the script asks how many diners to split between.",
+          "citations": []
+        }
+      ],
+      "attachments": [],
+      "files": [],
+      "files_v2": [],
+      "sync_sources": []
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "uuid": "b3d5f7a9-1c4e-4b6d-8f0a-5d8b0f2a4c69",
+  "name": "Conversation with a block type we do not know",
+  "summary": "",
+  "model": "claude-opus-4-5",
+  "created_at": "2026-07-01T08:15:52.006731Z",
+  "updated_at": "2026-07-01T08:16:40.882405Z",
+  "settings": {},
+  "is_starred": false,
+  "current_leaf_message_uuid": "c6f8b0d2-4e7a-4c9b-a5d7-9e2c4a6f8b13",
+  "chat_messages": [
+    {
+      "uuid": "a5c7e9b1-3d6f-4a8c-9b1d-7f0a2c4e6d38",
+      "parent_message_uuid": "00000000-0000-0000-0000-000000000000",
+      "sender": "human",
+      "index": 0,
+      "created_at": "2026-07-01T08:15:52.006731Z",
+      "updated_at": "2026-07-01T08:15:52.006731Z",
+      "truncated": false,
+      "content": [
+        {
+          "start_timestamp": "2026-07-01T08:15:52.006731Z",
+          "stop_timestamp": "2026-07-01T08:15:52.006731Z",
+          "type": "text",
+          "text": "Show me next Tuesday's weather.",
+          "citations": []
+        }
+      ],
+      "attachments": [],
+      "files": [],
+      "files_v2": [],
+      "sync_sources": []
+    },
+    {
+      "uuid": "c6f8b0d2-4e7a-4c9b-a5d7-9e2c4a6f8b13",
+      "parent_message_uuid": "a5c7e9b1-3d6f-4a8c-9b1d-7f0a2c4e6d38",
+      "sender": "assistant",
+      "index": 1,
+      "created_at": "2026-07-01T08:15:57.443820Z",
+      "updated_at": "2026-07-01T08:16:40.882405Z",
+      "truncated": false,
+      "content": [
+        {
+          "start_timestamp": "2026-07-01T08:15:57.551204Z",
+          "stop_timestamp": "2026-07-01T08:16:02.108475Z",
+          "type": "weather_card",
+          "location": "Portsmouth, UK",
+          "forecast": {
+            "day": "Tuesday",
+            "high_c": 22,
+            "low_c": 14,
+            "condition": "partly_cloudy"
+          }
+        },
+        {
+          "start_timestamp": "2026-07-01T08:16:02.207193Z",
+          "stop_timestamp": "2026-07-01T08:16:40.882405Z",
+          "type": "text",
+          "text": "Next Tuesday in Portsmouth looks partly cloudy with a high of 22°C and a low of 14°C — a decent day for the allotment.",
+          "citations": []
+        }
+      ],
+      "attachments": [],
+      "files": [],
+      "files_v2": [],
+      "sync_sources": []
+    }
+  ]
+}

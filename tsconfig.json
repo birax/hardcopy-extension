@@ -8,5 +8,5 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
-  "include": ["src", "wxt.config.ts", "vitest.config.ts", "eslint.config.js"]
+  "include": ["src", "tests", "wxt.config.ts", "vitest.config.ts", "eslint.config.js"]
 }

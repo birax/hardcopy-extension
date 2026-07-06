@@ -1,0 +1,60 @@
+{
+  "uuid": "8f2a1c4e-9b3d-4f6a-8c1e-2d5b7a9e0f31",
+  "name": "Planning a vegetable garden",
+  "summary": "",
+  "model": "claude-opus-4-5",
+  "created_at": "2026-05-14T09:12:03.512847Z",
+  "updated_at": "2026-05-14T09:13:41.201933Z",
+  "settings": {
+    "preview_feature_uses_artifacts": true,
+    "enabled_web_search": false
+  },
+  "is_starred": false,
+  "current_leaf_message_uuid": "b4e8d2f6-1a3c-4e5b-9d7f-8c2a6b0e4d19",
+  "chat_messages": [
+    {
+      "uuid": "a1c3e5f7-2b4d-4a6c-8e0f-1d3b5a7c9e02",
+      "parent_message_uuid": "00000000-0000-0000-0000-000000000000",
+      "sender": "human",
+      "index": 0,
+      "created_at": "2026-05-14T09:12:03.512847Z",
+      "updated_at": "2026-05-14T09:12:03.512847Z",
+      "truncated": false,
+      "content": [
+        {
+          "start_timestamp": "2026-05-14T09:12:03.512847Z",
+          "stop_timestamp": "2026-05-14T09:12:03.512847Z",
+          "type": "text",
+          "text": "What vegetables grow well in partial shade? I have a north-facing bed that only gets about four hours of sun.",
+          "citations": []
+        }
+      ],
+      "attachments": [],
+      "files": [],
+      "files_v2": [],
+      "sync_sources": []
+    },
+    {
+      "uuid": "b4e8d2f6-1a3c-4e5b-9d7f-8c2a6b0e4d19",
+      "parent_message_uuid": "a1c3e5f7-2b4d-4a6c-8e0f-1d3b5a7c9e02",
+      "sender": "assistant",
+      "index": 1,
+      "created_at": "2026-05-14T09:12:08.930214Z",
+      "updated_at": "2026-05-14T09:13:41.201933Z",
+      "truncated": false,
+      "content": [
+        {
+          "start_timestamp": "2026-05-14T09:12:09.104562Z",
+          "stop_timestamp": "2026-05-14T09:12:24.887301Z",
+          "type": "text",
+          "text": "Four hours of sun is enough for plenty of crops. Leafy greens and many root vegetables actually prefer some shade.\n\n| Crop | Sun needed | Notes |\n| --- | --- | --- |\n| Lettuce | 3–4 h | Bolts slower in shade |\n| Spinach | 3–4 h | Sow early spring |\n| Radishes | 4 h | Ready in ~30 days |\n| Chard | 4 h | Cut-and-come-again |\n\nA simple sowing plan:\n\n```text\nMarch:  spinach, radishes\nApril:  lettuce, chard\nMay:    succession-sow lettuce every 2 weeks\n```\n\nAvoid fruiting crops (tomatoes, peppers, squash) — they need 6–8 hours.",
+          "citations": []
+        }
+      ],
+      "attachments": [],
+      "files": [],
+      "files_v2": [],
+      "sync_sources": []
+    }
+  ]
+}

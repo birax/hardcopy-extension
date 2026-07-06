@@ -1,0 +1,145 @@
+{
+  "uuid": "9a1c3e5b-7d0f-4a2c-8e4b-1f6d8a0c2e59",
+  "name": "Birthday cake ideas",
+  "summary": "",
+  "model": "claude-opus-4-5",
+  "created_at": "2026-06-25T19:40:07.882064Z",
+  "updated_at": "2026-06-25T19:52:33.410975Z",
+  "settings": {},
+  "is_starred": false,
+  "current_leaf_message_uuid": "e5a7c9b1-3d6f-4e8a-b2c4-7f0d2b4e6a83",
+  "chat_messages": [
+    {
+      "uuid": "a3c5e7f9-1b4d-4c6e-8a0b-2d5f7a9c1e36",
+      "parent_message_uuid": "00000000-0000-0000-0000-000000000000",
+      "sender": "human",
+      "index": 0,
+      "created_at": "2026-06-25T19:40:07.882064Z",
+      "updated_at": "2026-06-25T19:40:07.882064Z",
+      "truncated": false,
+      "content": [
+        {
+          "start_timestamp": "2026-06-25T19:40:07.882064Z",
+          "stop_timestamp": "2026-06-25T19:40:07.882064Z",
+          "type": "text",
+          "text": "I'm baking a birthday cake for my dad this weekend. He likes coffee flavours.",
+          "citations": []
+        }
+      ],
+      "attachments": [],
+      "files": [],
+      "files_v2": [],
+      "sync_sources": []
+    },
+    {
+      "uuid": "b6d8f0a2-4c7e-4d9b-a1c3-5e8f0b2d4a67",
+      "parent_message_uuid": "a3c5e7f9-1b4d-4c6e-8a0b-2d5f7a9c1e36",
+      "sender": "assistant",
+      "index": 1,
+      "created_at": "2026-06-25T19:40:12.550317Z",
+      "updated_at": "2026-06-25T19:40:41.209864Z",
+      "truncated": false,
+      "content": [
+        {
+          "start_timestamp": "2026-06-25T19:40:12.667092Z",
+          "stop_timestamp": "2026-06-25T19:40:41.209864Z",
+          "type": "text",
+          "text": "A classic **coffee and walnut cake** would be perfect — two sponge layers flavoured with strong espresso, filled and topped with coffee buttercream and walnut halves. Want the full recipe?",
+          "citations": []
+        }
+      ],
+      "attachments": [],
+      "files": [],
+      "files_v2": [],
+      "sync_sources": []
+    },
+    {
+      "uuid": "c9b1d3e5-6f8a-4b0c-9d2e-4a7c9e1f3b50",
+      "parent_message_uuid": "b6d8f0a2-4c7e-4d9b-a1c3-5e8f0b2d4a67",
+      "sender": "human",
+      "index": 2,
+      "created_at": "2026-06-25T19:41:29.774052Z",
+      "updated_at": "2026-06-25T19:41:29.774052Z",
+      "truncated": false,
+      "content": [
+        {
+          "start_timestamp": "2026-06-25T19:41:29.774052Z",
+          "stop_timestamp": "2026-06-25T19:41:29.774052Z",
+          "type": "text",
+          "text": "Yes, give me the recipe for an 8-inch tin.",
+          "citations": []
+        }
+      ],
+      "attachments": [],
+      "files": [],
+      "files_v2": [],
+      "sync_sources": []
+    },
+    {
+      "uuid": "d2f4b6c8-0a3e-4c5d-b7f9-6b9e1d3f5c74",
+      "parent_message_uuid": "c9b1d3e5-6f8a-4b0c-9d2e-4a7c9e1f3b50",
+      "sender": "assistant",
+      "index": 3,
+      "created_at": "2026-06-25T19:41:34.918263Z",
+      "updated_at": "2026-06-25T19:42:20.663108Z",
+      "truncated": false,
+      "content": [
+        {
+          "start_timestamp": "2026-06-25T19:41:35.024719Z",
+          "stop_timestamp": "2026-06-25T19:42:20.663108Z",
+          "type": "text",
+          "text": "**Coffee & walnut cake (8-inch)**\n\nSponge: 225 g butter, 225 g caster sugar, 4 eggs, 225 g self-raising flour, 2 tbsp espresso, 75 g chopped walnuts. Bake 25 min at 180°C.\n\nButtercream: 125 g butter, 250 g icing sugar, 1 tbsp espresso.",
+          "citations": []
+        }
+      ],
+      "attachments": [],
+      "files": [],
+      "files_v2": [],
+      "sync_sources": []
+    },
+    {
+      "uuid": "f8c0a2d4-5e7b-4a9c-8b1d-3c6e8a0d2f45",
+      "parent_message_uuid": "b6d8f0a2-4c7e-4d9b-a1c3-5e8f0b2d4a67",
+      "sender": "human",
+      "index": 4,
+      "created_at": "2026-06-25T19:50:44.287930Z",
+      "updated_at": "2026-06-25T19:50:44.287930Z",
+      "truncated": false,
+      "content": [
+        {
+          "start_timestamp": "2026-06-25T19:50:44.287930Z",
+          "stop_timestamp": "2026-06-25T19:50:44.287930Z",
+          "type": "text",
+          "text": "Actually he can't eat nuts — can you make it coffee-only, for an 8-inch tin?",
+          "citations": []
+        }
+      ],
+      "attachments": [],
+      "files": [],
+      "files_v2": [],
+      "sync_sources": []
+    },
+    {
+      "uuid": "e5a7c9b1-3d6f-4e8a-b2c4-7f0d2b4e6a83",
+      "parent_message_uuid": "f8c0a2d4-5e7b-4a9c-8b1d-3c6e8a0d2f45",
+      "sender": "assistant",
+      "index": 5,
+      "created_at": "2026-06-25T19:50:49.902174Z",
+      "updated_at": "2026-06-25T19:52:33.410975Z",
+      "truncated": false,
+      "content": [
+        {
+          "start_timestamp": "2026-06-25T19:50:50.014028Z",
+          "stop_timestamp": "2026-06-25T19:52:33.410975Z",
+          "type": "text",
+          "text": "No problem — skip the walnuts entirely.\n\n**Coffee cake (8-inch, nut-free)**\n\nSponge: 225 g butter, 225 g caster sugar, 4 eggs, 225 g self-raising flour, 3 tbsp espresso. Bake 25 min at 180°C.\n\nButtercream: 125 g butter, 250 g icing sugar, 1½ tbsp espresso. Decorate with chocolate-coated coffee beans instead of walnut halves.",
+          "citations": []
+        }
+      ],
+      "attachments": [],
+      "files": [],
+      "files_v2": [],
+      "sync_sources": []
+    }
+  ]
+}

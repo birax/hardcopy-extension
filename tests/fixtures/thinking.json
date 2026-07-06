@@ -1,0 +1,125 @@
+{
+  "uuid": "3d7b9f1a-5c2e-4d8b-a6f0-4e1c8b3a7d52",
+  "name": "Estimating paint for a hallway",
+  "summary": "Working out how much paint is needed for a hallway with doors and a window.",
+  "model": "claude-opus-4-5",
+  "created_at": "2026-05-20T18:44:10.038512Z",
+  "updated_at": "2026-05-20T18:47:02.664190Z",
+  "settings": {
+    "paprika_mode": "extended"
+  },
+  "is_starred": false,
+  "current_leaf_message_uuid": "e9c1a3b5-7d4f-4b2a-8e6c-0f3d5a7b9c14",
+  "chat_messages": [
+    {
+      "uuid": "c5a7e9d1-3f2b-4c8a-9e4d-6b0f2a8c4e73",
+      "parent_message_uuid": "00000000-0000-0000-0000-000000000000",
+      "sender": "human",
+      "index": 0,
+      "created_at": "2026-05-20T18:44:10.038512Z",
+      "updated_at": "2026-05-20T18:44:10.038512Z",
+      "truncated": false,
+      "content": [
+        {
+          "start_timestamp": "2026-05-20T18:44:10.038512Z",
+          "stop_timestamp": "2026-05-20T18:44:10.038512Z",
+          "type": "text",
+          "text": "How many litres of paint do I need for a hallway 6 m long, 1.2 m wide, 2.4 m high, with three doors and one window? Two coats.",
+          "citations": []
+        }
+      ],
+      "attachments": [],
+      "files": [],
+      "files_v2": [],
+      "sync_sources": []
+    },
+    {
+      "uuid": "d8b0f2c4-6e1a-4d5c-b3e7-9a2c4f6b8d05",
+      "parent_message_uuid": "c5a7e9d1-3f2b-4c8a-9e4d-6b0f2a8c4e73",
+      "sender": "assistant",
+      "index": 1,
+      "created_at": "2026-05-20T18:44:15.772034Z",
+      "updated_at": "2026-05-20T18:44:52.310087Z",
+      "truncated": false,
+      "content": [
+        {
+          "start_timestamp": "2026-05-20T18:44:15.902311Z",
+          "stop_timestamp": "2026-05-20T18:44:38.114523Z",
+          "type": "thinking",
+          "thinking": "Wall area: perimeter = 2 × (6 + 1.2) = 14.4 m. Wall area = 14.4 × 2.4 = 34.56 m².\n\nSubtract openings: three doors ≈ 3 × (0.76 × 2.0) = 4.56 m². One window ≈ 1.2 × 1.0 = 1.2 m². Net ≈ 28.8 m².\n\nTwo coats → 57.6 m². Coverage ~12 m²/L → 4.8 L. Recommend 5 L can.",
+          "summaries": [
+            {
+              "summary": "Calculating wall area minus doors and window"
+            },
+            {
+              "summary": "Converting coverage into litres for two coats"
+            }
+          ],
+          "cut_off": false
+        },
+        {
+          "start_timestamp": "2026-05-20T18:44:38.204871Z",
+          "stop_timestamp": "2026-05-20T18:44:52.310087Z",
+          "type": "text",
+          "text": "You'll need about **4.8 litres**, so buy a 5 L can.\n\n- Net wall area: ≈ 28.8 m² (34.6 m² minus doors and window)\n- Two coats: ≈ 57.6 m²\n- At ~12 m² per litre: ≈ 4.8 L",
+          "citations": []
+        }
+      ],
+      "attachments": [],
+      "files": [],
+      "files_v2": [],
+      "sync_sources": []
+    },
+    {
+      "uuid": "f2d4b6a8-0c3e-4f7b-a1d5-8e6c0b2f4a97",
+      "parent_message_uuid": "d8b0f2c4-6e1a-4d5c-b3e7-9a2c4f6b8d05",
+      "sender": "human",
+      "index": 2,
+      "created_at": "2026-05-20T18:46:30.115209Z",
+      "updated_at": "2026-05-20T18:46:30.115209Z",
+      "truncated": false,
+      "content": [
+        {
+          "start_timestamp": "2026-05-20T18:46:30.115209Z",
+          "stop_timestamp": "2026-05-20T18:46:30.115209Z",
+          "type": "text",
+          "text": "And the ceiling?",
+          "citations": []
+        }
+      ],
+      "attachments": [],
+      "files": [],
+      "files_v2": [],
+      "sync_sources": []
+    },
+    {
+      "uuid": "e9c1a3b5-7d4f-4b2a-8e6c-0f3d5a7b9c14",
+      "parent_message_uuid": "f2d4b6a8-0c3e-4f7b-a1d5-8e6c0b2f4a97",
+      "sender": "assistant",
+      "index": 3,
+      "created_at": "2026-05-20T18:46:34.667818Z",
+      "updated_at": "2026-05-20T18:47:02.664190Z",
+      "truncated": false,
+      "content": [
+        {
+          "start_timestamp": "2026-05-20T18:46:34.781102Z",
+          "stop_timestamp": "2026-05-20T18:46:41.220340Z",
+          "type": "thinking",
+          "thinking": "Ceiling area = 6 × 1.2 = 7.2 m². Two coats = 14.4 m². At 12 m²/L that is 1.2 L; a 2.5 L can is the smallest sensible size, or 1 L plus a tester.",
+          "cut_off": false
+        },
+        {
+          "start_timestamp": "2026-05-20T18:46:41.309875Z",
+          "stop_timestamp": "2026-05-20T18:47:02.664190Z",
+          "type": "text",
+          "text": "The ceiling is 7.2 m², so two coats need about **1.2 litres** — a 2.5 L can of ceiling paint covers it with plenty spare.",
+          "citations": []
+        }
+      ],
+      "attachments": [],
+      "files": [],
+      "files_v2": [],
+      "sync_sources": []
+    }
+  ]
+}
