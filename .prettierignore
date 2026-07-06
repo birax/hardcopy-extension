@@ -1,0 +1,9 @@
+# Generated / vendored
+.output/
+.wxt/
+coverage/
+node_modules/
+pnpm-lock.yaml
+
+# Prose (ADRs, research, docs) is formatted by its authors, not Prettier.
+*.md

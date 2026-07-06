@@ -1,0 +1,42 @@
+{
+  "name": "hardcopy",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Export your Claude conversations as Markdown, PDF, Word, RTF and plain text — fully in your browser.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/birax/hardcopy-extension.git"
+  },
+  "packageManager": "pnpm@11.10.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "wxt",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "build:edge": "wxt build -b edge",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "zip:edge": "wxt zip -b edge",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "postinstall": "wxt prepare"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@vitest/coverage-v8": "^4.1.10",
+    "eslint": "^10.6.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.4",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.62.1",
+    "vitest": "^4.1.10",
+    "wxt": "^0.20.27"
+  }
+}

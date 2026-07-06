@@ -1,0 +1,20 @@
+# Single-package repo; this file exists for pnpm settings only.
+
+# Dependencies whose install scripts may run (pnpm blocks all others).
+allowBuilds:
+  # esbuild's postinstall installs the platform-specific binary.
+  esbuild: true
+  # spawn-sync's build script is a no-op shim on modern Node.
+  spawn-sync: false
+
+# Packages allowed despite pnpm's minimum-release-age gate.
+minimumReleaseAgeExclude:
+  - '@vitest/coverage-v8@4.1.10'
+  - '@vitest/expect@4.1.10'
+  - '@vitest/mocker@4.1.10'
+  - '@vitest/pretty-format@4.1.10'
+  - '@vitest/runner@4.1.10'
+  - '@vitest/snapshot@4.1.10'
+  - '@vitest/spy@4.1.10'
+  - '@vitest/utils@4.1.10'
+  - vitest@4.1.10
