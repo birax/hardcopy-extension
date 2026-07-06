@@ -41,5 +41,11 @@
     "typescript-eslint": "^8.62.1",
     "vitest": "^4.1.10",
     "wxt": "^0.20.27"
+  },
+  "dependencies": {
+    "@pdf-lib/fontkit": "^1.1.1",
+    "docx": "^9.7.1",
+    "marked": "^18.0.5",
+    "pdf-lib": "^1.17.1"
   }
 }
