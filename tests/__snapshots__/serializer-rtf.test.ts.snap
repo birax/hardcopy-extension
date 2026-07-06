@@ -1,0 +1,358 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`markdown rendering > stays structurally valid and snapshots the full feature set 1`] = `
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033\\uc1
+{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica{\\*\\falt Calibri};}{\\f1\\fmodern\\fcharset0 Courier New{\\*\\falt Menlo};}}
+{\\colortbl;\\red23\\green37\\blue43;\\red10\\green91\\blue85;\\red180\\green34\\blue55;\\red66\\green85\\blue92;\\red242\\green247\\blue246;}
+{\\pard\\sa120\\keepn\\b\\cf1\\f0\\fs40 Handmade conversation\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}\\par}
+{\\pard\\li0\\sb240\\sa120\\keepn\\b\\cf1\\f0\\fs32 Heading one\\par}
+{\\pard\\li0\\sb240\\sa120\\keepn\\b\\cf1\\f0\\fs22 Heading six\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Body with {\\b bold}, {\\i italic}, {\\f1\\fs20 code span}, {\\strike gone}, and a {\\ul\\cf2 named link}{\\cf4  (https://example.com/a)}.\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Autolink: {\\ul\\cf2 https://example.com/self}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 An image {\\i\\cf4 [image: alt text]} inline, plus <b>raw html</b> and * an escape.\\par}
+{\\pard\\li360\\fi-360\\tx360\\sa60\\cf1\\f0\\fs22 \\bullet\\tab bullet one\\par}
+{\\pard\\li360\\fi-360\\tx360\\sa60\\cf1\\f0\\fs22 \\bullet\\tab bullet two\\par}
+{\\pard\\li720\\fi-360\\tx720\\sa60\\cf1\\f0\\fs22 1.\\tab nested ordered\\par}
+{\\pard\\li720\\fi-360\\tx720\\sa60\\cf1\\f0\\fs22 2.\\tab second\\par}
+{\\pard\\li360\\fi-360\\tx360\\sa60\\cf1\\f0\\fs22 [x]\\tab done task\\par}
+{\\pard\\li360\\fi-360\\tx360\\sa60\\cf1\\f0\\fs22 [ ]\\tab open task\\par}
+{\\pard\\li720\\sa120\\cf4\\f0\\fs22 A quote with {\\b bold} inside.\\par}
+{\\pard\\li720\\sa120\\cf4\\f0\\fs22 Second quoted paragraph.\\par}
+{\\pard\\li0\\sa120\\cbpat5\\cf1\\f1\\fs20 def hi():\\line \\line     return "two\\\\tblank lines kept"\\par}
+{\\pard\\li0\\sa120\\brdrb\\brdrs\\brdrw15\\brdrcf4\\brsp60 \\par}
+\\trowd\\trgaph108\\trleft0\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\clcbpat5\\cellx3120\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\clcbpat5\\cellx6240\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\clcbpat5\\cellx9360\\pard\\intbl\\ql{\\b\\cf1\\f0\\fs22 Left}\\cell\\pard\\intbl\\qc{\\b\\cf1\\f0\\fs22 Centered}\\cell\\pard\\intbl\\qr{\\b\\cf1\\f0\\fs22 Right}\\cell\\row
+\\trowd\\trgaph108\\trleft0\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx3120\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx6240\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx9360\\pard\\intbl\\ql{\\cf1\\f0\\fs22 a}\\cell\\pard\\intbl\\qc{\\cf1\\f0\\fs22 b}\\cell\\pard\\intbl\\qr{\\cf1\\f0\\fs22 c}\\cell\\row
+\\trowd\\trgaph108\\trleft0\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx3120\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx6240\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx9360\\pard\\intbl\\ql{\\cf1\\f0\\fs22 d}\\cell\\pard\\intbl\\qc{\\cf1\\f0\\fs22 e}\\cell\\pard\\intbl\\qr{\\cf1\\f0\\fs22 f}\\cell\\row
+\\pard
+{\\pard\\li0\\sa120\\cbpat5\\cf1\\f1\\fs20 <div>block html</div>\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Entities: \\{decimal\\} and \\u8594? and &.\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 hard break line one\\line hard break line two\\par}
+}"
+`;
+
+exports[`serializeRtf fixture snapshots > serializes artifacts with default options 1`] = `
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033\\uc1
+{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica{\\*\\falt Calibri};}{\\f1\\fmodern\\fcharset0 Courier New{\\*\\falt Menlo};}}
+{\\colortbl;\\red23\\green37\\blue43;\\red10\\green91\\blue85;\\red180\\green34\\blue55;\\red66\\green85\\blue92;\\red242\\green247\\blue246;}
+{\\pard\\sa120\\keepn\\b\\cf1\\f0\\fs40 Tip calculator script\\par}
+{\\pard\\sa240\\cf4\\f0\\fs16 Created 2026-06-10 14:05 UTC \\u183? Updated 2026-06-10 14:11 UTC \\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Write me a tiny Python script that calculates a tip and splits the bill.\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}\\par}
+{\\pard\\li360\\sb120\\sa60\\keepn\\b\\cf2\\f1\\fs20 Artifact: Tip calculator (tip-calculator, create, python)\\par}
+{\\pard\\li360\\sa120\\cbpat5\\cf1\\f1\\fs20 def tip(bill: float, percent: float = 12.5) -> float:\\line     return round(bill * percent / 100, 2)\\line \\line \\line if __name__ == "__main__":\\line     bill = float(input("Bill amount: "))\\line     print(f"Tip: \\{tip(bill)\\}")\\line \\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Here's a minimal tip calculator. Run it and enter the bill amount when prompted.\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Add splitting between diners, and make the default tip 15%.\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}\\par}
+{\\pard\\li360\\sb120\\sa60\\keepn\\b\\cf2\\f1\\fs20 Artifact: Tip calculator (tip-calculator, update, python)\\par}
+{\\pard\\li360\\sa120\\cbpat5\\cf1\\f1\\fs20 def tip(bill: float, percent: float = 15.0) -> float:\\line     return round(bill * percent / 100, 2)\\line \\line \\line if __name__ == "__main__":\\line     bill = float(input("Bill amount: "))\\line     print(f"Tip: \\{tip(bill)\\}")\\line \\par}
+{\\pard\\li360\\sb120\\sa60\\keepn\\b\\cf2\\f1\\fs20 Artifact: Tip calculator (tip-calculator, update, python, final version)\\par}
+{\\pard\\li360\\sa120\\cbpat5\\cf1\\f1\\fs20 def tip(bill: float, percent: float = 15.0) -> float:\\line     return round(bill * percent / 100, 2)\\line \\line \\line if __name__ == "__main__":\\line     bill = float(input("Bill amount: "))\\line     diners = int(input("Diners: "))\\line     total = bill + tip(bill)\\line     print(f"Tip: \\{tip(bill)\\}")\\line     print(f"Each pays: \\{round(total / diners, 2)\\}")\\line \\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Done \\u8212? the default tip is now 15% and the script asks how many diners to split between.\\par}
+}"
+`;
+
+exports[`serializeRtf fixture snapshots > serializes artifacts with everything on 1`] = `
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033\\uc1
+{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica{\\*\\falt Calibri};}{\\f1\\fmodern\\fcharset0 Courier New{\\*\\falt Menlo};}}
+{\\colortbl;\\red23\\green37\\blue43;\\red10\\green91\\blue85;\\red180\\green34\\blue55;\\red66\\green85\\blue92;\\red242\\green247\\blue246;}
+{\\pard\\sa120\\keepn\\b\\cf1\\f0\\fs40 Tip calculator script\\par}
+{\\pard\\sa240\\cf4\\f0\\fs16 Created 2026-06-10 14:05 UTC \\u183? Updated 2026-06-10 14:11 UTC \\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}{\\cf4\\fs16  \\u8212?  2026-06-10 14:05 UTC}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Write me a tiny Python script that calculates a tip and splits the bill.\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}{\\cf4\\fs16  \\u8212?  2026-06-10 14:05 UTC}\\par}
+{\\pard\\li360\\sb120\\sa60\\keepn\\b\\cf2\\f1\\fs20 Artifact: Tip calculator (tip-calculator, create, python)\\par}
+{\\pard\\li360\\sa120\\cbpat5\\cf1\\f1\\fs20 def tip(bill: float, percent: float = 12.5) -> float:\\line     return round(bill * percent / 100, 2)\\line \\line \\line if __name__ == "__main__":\\line     bill = float(input("Bill amount: "))\\line     print(f"Tip: \\{tip(bill)\\}")\\line \\par}
+{\\pard\\li360\\sb120\\sa60\\keepn\\b\\cf4\\f1\\fs20 Tool result: artifacts\\par}
+{\\pard\\li360\\sa120\\cbpat5\\cf1\\f1\\fs20 OK\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Here's a minimal tip calculator. Run it and enter the bill amount when prompted.\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}{\\cf4\\fs16  \\u8212?  2026-06-10 14:08 UTC}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Add splitting between diners, and make the default tip 15%.\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}{\\cf4\\fs16  \\u8212?  2026-06-10 14:08 UTC}\\par}
+{\\pard\\li360\\sb120\\sa60\\keepn\\b\\cf2\\f1\\fs20 Artifact: Tip calculator (tip-calculator, update, python)\\par}
+{\\pard\\li360\\sa120\\cbpat5\\cf1\\f1\\fs20 def tip(bill: float, percent: float = 15.0) -> float:\\line     return round(bill * percent / 100, 2)\\line \\line \\line if __name__ == "__main__":\\line     bill = float(input("Bill amount: "))\\line     print(f"Tip: \\{tip(bill)\\}")\\line \\par}
+{\\pard\\li360\\sb120\\sa60\\keepn\\b\\cf4\\f1\\fs20 Tool result: artifacts\\par}
+{\\pard\\li360\\sa120\\cbpat5\\cf1\\f1\\fs20 OK\\par}
+{\\pard\\li360\\sb120\\sa60\\keepn\\b\\cf2\\f1\\fs20 Artifact: Tip calculator (tip-calculator, update, python, final version)\\par}
+{\\pard\\li360\\sa120\\cbpat5\\cf1\\f1\\fs20 def tip(bill: float, percent: float = 15.0) -> float:\\line     return round(bill * percent / 100, 2)\\line \\line \\line if __name__ == "__main__":\\line     bill = float(input("Bill amount: "))\\line     diners = int(input("Diners: "))\\line     total = bill + tip(bill)\\line     print(f"Tip: \\{tip(bill)\\}")\\line     print(f"Each pays: \\{round(total / diners, 2)\\}")\\line \\par}
+{\\pard\\li360\\sb120\\sa60\\keepn\\b\\cf4\\f1\\fs20 Tool result: artifacts\\par}
+{\\pard\\li360\\sa120\\cbpat5\\cf1\\f1\\fs20 OK\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Done \\u8212? the default tip is now 15% and the script asks how many diners to split between.\\par}
+}"
+`;
+
+exports[`serializeRtf fixture snapshots > serializes attachments-files with default options 1`] = `
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033\\uc1
+{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica{\\*\\falt Calibri};}{\\f1\\fmodern\\fcharset0 Courier New{\\*\\falt Menlo};}}
+{\\colortbl;\\red23\\green37\\blue43;\\red10\\green91\\blue85;\\red180\\green34\\blue55;\\red66\\green85\\blue92;\\red242\\green247\\blue246;}
+{\\pard\\sa120\\keepn\\b\\cf1\\f0\\fs40 Summarise my meeting notes\\par}
+{\\pard\\sa240\\cf4\\f0\\fs16 Created 2026-06-18 11:20 UTC \\u183? Updated 2026-06-18 11:21 UTC \\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Summarise the attached notes into three action points, and keep the spreadsheet in mind for context.\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Three action points from your notes:\\par}
+{\\pard\\li360\\fi-360\\tx360\\sa60\\cf1\\f0\\fs22 1.\\tab {\\b Chase sign-off} on the onboarding flow before the demo on the 19th.\\par}
+{\\pard\\li360\\fi-360\\tx360\\sa60\\cf1\\f0\\fs22 2.\\tab {\\b Unblock the data migration} by getting access to the legacy exports.\\par}
+{\\pard\\li360\\fi-360\\tx360\\sa60\\cf1\\f0\\fs22 3.\\tab {\\b Review Sarah's release notes} draft once it lands.\\par}
+}"
+`;
+
+exports[`serializeRtf fixture snapshots > serializes attachments-files with everything on 1`] = `
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033\\uc1
+{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica{\\*\\falt Calibri};}{\\f1\\fmodern\\fcharset0 Courier New{\\*\\falt Menlo};}}
+{\\colortbl;\\red23\\green37\\blue43;\\red10\\green91\\blue85;\\red180\\green34\\blue55;\\red66\\green85\\blue92;\\red242\\green247\\blue246;}
+{\\pard\\sa120\\keepn\\b\\cf1\\f0\\fs40 Summarise my meeting notes\\par}
+{\\pard\\sa240\\cf4\\f0\\fs16 Created 2026-06-18 11:20 UTC \\u183? Updated 2026-06-18 11:21 UTC \\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}{\\cf4\\fs16  \\u8212?  2026-06-18 11:20 UTC}\\par}
+{\\pard\\li360\\sb120\\sa60\\keepn\\b\\cf4\\f1\\fs20 Attachment: meeting-notes.txt (text/plain)\\par}
+{\\pard\\li360\\sa120\\cbpat5\\cf1\\f1\\fs20 Sprint review 12 June\\line - Sign-off pending on the onboarding flow\\line - Data migration blocked on access to the legacy exports\\line - Sarah to draft the release notes\\line - Next demo scheduled for the 19th\\par}
+{\\pard\\li360\\sa120\\i\\cf4\\f0\\fs20 [File: budget-q3.xlsx (document)]\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Summarise the attached notes into three action points, and keep the spreadsheet in mind for context.\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}{\\cf4\\fs16  \\u8212?  2026-06-18 11:20 UTC}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Three action points from your notes:\\par}
+{\\pard\\li360\\fi-360\\tx360\\sa60\\cf1\\f0\\fs22 1.\\tab {\\b Chase sign-off} on the onboarding flow before the demo on the 19th.\\par}
+{\\pard\\li360\\fi-360\\tx360\\sa60\\cf1\\f0\\fs22 2.\\tab {\\b Unblock the data migration} by getting access to the legacy exports.\\par}
+{\\pard\\li360\\fi-360\\tx360\\sa60\\cf1\\f0\\fs22 3.\\tab {\\b Review Sarah's release notes} draft once it lands.\\par}
+}"
+`;
+
+exports[`serializeRtf fixture snapshots > serializes branched-tree with default options 1`] = `
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033\\uc1
+{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica{\\*\\falt Calibri};}{\\f1\\fmodern\\fcharset0 Courier New{\\*\\falt Menlo};}}
+{\\colortbl;\\red23\\green37\\blue43;\\red10\\green91\\blue85;\\red180\\green34\\blue55;\\red66\\green85\\blue92;\\red242\\green247\\blue246;}
+{\\pard\\sa120\\keepn\\b\\cf1\\f0\\fs40 Birthday cake ideas\\par}
+{\\pard\\sa240\\cf4\\f0\\fs16 Created 2026-06-25 19:40 UTC \\u183? Updated 2026-06-25 19:52 UTC \\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 I'm baking a birthday cake for my dad this weekend. He likes coffee flavours.\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 A classic {\\b coffee and walnut cake} would be perfect \\u8212? two sponge layers flavoured with strong espresso, filled and topped with coffee buttercream and walnut halves. Want the full recipe?\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Actually he can't eat nuts \\u8212? can you make it coffee-only, for an 8-inch tin?\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 No problem \\u8212? skip the walnuts entirely.\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 {\\b Coffee cake (8-inch, nut-free)}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Sponge: 225 g butter, 225 g caster sugar, 4 eggs, 225 g self-raising flour, 3 tbsp espresso. Bake 25 min at 180\\u176?C.\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Buttercream: 125 g butter, 250 g icing sugar, 1\\u189? tbsp espresso. Decorate with chocolate-coated coffee beans instead of walnut halves.\\par}
+}"
+`;
+
+exports[`serializeRtf fixture snapshots > serializes branched-tree with everything on 1`] = `
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033\\uc1
+{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica{\\*\\falt Calibri};}{\\f1\\fmodern\\fcharset0 Courier New{\\*\\falt Menlo};}}
+{\\colortbl;\\red23\\green37\\blue43;\\red10\\green91\\blue85;\\red180\\green34\\blue55;\\red66\\green85\\blue92;\\red242\\green247\\blue246;}
+{\\pard\\sa120\\keepn\\b\\cf1\\f0\\fs40 Birthday cake ideas\\par}
+{\\pard\\sa240\\cf4\\f0\\fs16 Created 2026-06-25 19:40 UTC \\u183? Updated 2026-06-25 19:52 UTC \\par}
+{\\pard\\sb360\\sa120\\keepn\\b\\cf2\\f0\\fs28 Branch 1 of 2\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}{\\cf4\\fs16  \\u8212?  2026-06-25 19:40 UTC}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 I'm baking a birthday cake for my dad this weekend. He likes coffee flavours.\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}{\\cf4\\fs16  \\u8212?  2026-06-25 19:40 UTC}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 A classic {\\b coffee and walnut cake} would be perfect \\u8212? two sponge layers flavoured with strong espresso, filled and topped with coffee buttercream and walnut halves. Want the full recipe?\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}{\\cf4\\fs16  \\u8212?  2026-06-25 19:41 UTC}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Yes, give me the recipe for an 8-inch tin.\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}{\\cf4\\fs16  \\u8212?  2026-06-25 19:41 UTC}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 {\\b Coffee & walnut cake (8-inch)}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Sponge: 225 g butter, 225 g caster sugar, 4 eggs, 225 g self-raising flour, 2 tbsp espresso, 75 g chopped walnuts. Bake 25 min at 180\\u176?C.\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Buttercream: 125 g butter, 250 g icing sugar, 1 tbsp espresso.\\par}
+{\\pard\\sb360\\sa120\\keepn\\b\\cf2\\f0\\fs28 Branch 2 of 2 (current)\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}{\\cf4\\fs16  \\u8212?  2026-06-25 19:40 UTC}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 I'm baking a birthday cake for my dad this weekend. He likes coffee flavours.\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}{\\cf4\\fs16  \\u8212?  2026-06-25 19:40 UTC}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 A classic {\\b coffee and walnut cake} would be perfect \\u8212? two sponge layers flavoured with strong espresso, filled and topped with coffee buttercream and walnut halves. Want the full recipe?\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}{\\cf4\\fs16  \\u8212?  2026-06-25 19:50 UTC}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Actually he can't eat nuts \\u8212? can you make it coffee-only, for an 8-inch tin?\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}{\\cf4\\fs16  \\u8212?  2026-06-25 19:50 UTC}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 No problem \\u8212? skip the walnuts entirely.\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 {\\b Coffee cake (8-inch, nut-free)}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Sponge: 225 g butter, 225 g caster sugar, 4 eggs, 225 g self-raising flour, 3 tbsp espresso. Bake 25 min at 180\\u176?C.\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Buttercream: 125 g butter, 250 g icing sugar, 1\\u189? tbsp espresso. Decorate with chocolate-coated coffee beans instead of walnut halves.\\par}
+}"
+`;
+
+exports[`serializeRtf fixture snapshots > serializes images with default options 1`] = `
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033\\uc1
+{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica{\\*\\falt Calibri};}{\\f1\\fmodern\\fcharset0 Courier New{\\*\\falt Menlo};}}
+{\\colortbl;\\red23\\green37\\blue43;\\red10\\green91\\blue85;\\red180\\green34\\blue55;\\red66\\green85\\blue92;\\red242\\green247\\blue246;}
+{\\pard\\sa120\\keepn\\b\\cf1\\f0\\fs40 What plant is this?\\par}
+{\\pard\\sa240\\cf4\\f0\\fs16 Created 2026-06-21 16:02 UTC \\u183? Updated 2026-06-21 16:03 UTC \\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}\\par}
+{\\pard\\li360\\sa120\\i\\cf4\\f0\\fs20 [Image: inline image (image/png)]\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Found this growing at the edge of the lawn \\u8212? any idea what it is?\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 That looks like {\\b creeping buttercup} ({\\i Ranunculus repens}) \\u8212? note the three-lobed leaves with pale patches and the runners spreading along the ground. It's common in damp lawns. If you want it gone, dig out the runners before it flowers; mowing alone won't stop it.\\par}
+}"
+`;
+
+exports[`serializeRtf fixture snapshots > serializes images with everything on 1`] = `
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033\\uc1
+{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica{\\*\\falt Calibri};}{\\f1\\fmodern\\fcharset0 Courier New{\\*\\falt Menlo};}}
+{\\colortbl;\\red23\\green37\\blue43;\\red10\\green91\\blue85;\\red180\\green34\\blue55;\\red66\\green85\\blue92;\\red242\\green247\\blue246;}
+{\\pard\\sa120\\keepn\\b\\cf1\\f0\\fs40 What plant is this?\\par}
+{\\pard\\sa240\\cf4\\f0\\fs16 Created 2026-06-21 16:02 UTC \\u183? Updated 2026-06-21 16:03 UTC \\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}{\\cf4\\fs16  \\u8212?  2026-06-21 16:02 UTC}\\par}
+{\\pard\\li360\\sa120\\i\\cf4\\f0\\fs20 [File: IMG_4207.png (image)]\\par}
+{\\pard\\li360\\sa120\\i\\cf4\\f0\\fs20 [Image: inline image (image/png)]\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Found this growing at the edge of the lawn \\u8212? any idea what it is?\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}{\\cf4\\fs16  \\u8212?  2026-06-21 16:02 UTC}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 That looks like {\\b creeping buttercup} ({\\i Ranunculus repens}) \\u8212? note the three-lobed leaves with pale patches and the runners spreading along the ground. It's common in damp lawns. If you want it gone, dig out the runners before it flowers; mowing alone won't stop it.\\par}
+}"
+`;
+
+exports[`serializeRtf fixture snapshots > serializes simple-text with default options 1`] = `
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033\\uc1
+{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica{\\*\\falt Calibri};}{\\f1\\fmodern\\fcharset0 Courier New{\\*\\falt Menlo};}}
+{\\colortbl;\\red23\\green37\\blue43;\\red10\\green91\\blue85;\\red180\\green34\\blue55;\\red66\\green85\\blue92;\\red242\\green247\\blue246;}
+{\\pard\\sa120\\keepn\\b\\cf1\\f0\\fs40 Planning a vegetable garden\\par}
+{\\pard\\sa240\\cf4\\f0\\fs16 Created 2026-05-14 09:12 UTC \\u183? Updated 2026-05-14 09:13 UTC \\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 What vegetables grow well in partial shade? I have a north-facing bed that only gets about four hours of sun.\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Four hours of sun is enough for plenty of crops. Leafy greens and many root vegetables actually prefer some shade.\\par}
+\\trowd\\trgaph108\\trleft0\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\clcbpat5\\cellx3120\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\clcbpat5\\cellx6240\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\clcbpat5\\cellx9360\\pard\\intbl\\ql{\\b\\cf1\\f0\\fs22 Crop}\\cell\\pard\\intbl\\ql{\\b\\cf1\\f0\\fs22 Sun needed}\\cell\\pard\\intbl\\ql{\\b\\cf1\\f0\\fs22 Notes}\\cell\\row
+\\trowd\\trgaph108\\trleft0\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx3120\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx6240\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx9360\\pard\\intbl\\ql{\\cf1\\f0\\fs22 Lettuce}\\cell\\pard\\intbl\\ql{\\cf1\\f0\\fs22 3\\u8211?4 h}\\cell\\pard\\intbl\\ql{\\cf1\\f0\\fs22 Bolts slower in shade}\\cell\\row
+\\trowd\\trgaph108\\trleft0\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx3120\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx6240\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx9360\\pard\\intbl\\ql{\\cf1\\f0\\fs22 Spinach}\\cell\\pard\\intbl\\ql{\\cf1\\f0\\fs22 3\\u8211?4 h}\\cell\\pard\\intbl\\ql{\\cf1\\f0\\fs22 Sow early spring}\\cell\\row
+\\trowd\\trgaph108\\trleft0\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx3120\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx6240\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx9360\\pard\\intbl\\ql{\\cf1\\f0\\fs22 Radishes}\\cell\\pard\\intbl\\ql{\\cf1\\f0\\fs22 4 h}\\cell\\pard\\intbl\\ql{\\cf1\\f0\\fs22 Ready in ~30 days}\\cell\\row
+\\trowd\\trgaph108\\trleft0\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx3120\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx6240\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx9360\\pard\\intbl\\ql{\\cf1\\f0\\fs22 Chard}\\cell\\pard\\intbl\\ql{\\cf1\\f0\\fs22 4 h}\\cell\\pard\\intbl\\ql{\\cf1\\f0\\fs22 Cut-and-come-again}\\cell\\row
+\\pard
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 A simple sowing plan:\\par}
+{\\pard\\li0\\sa120\\cbpat5\\cf1\\f1\\fs20 March:  spinach, radishes\\line April:  lettuce, chard\\line May:    succession-sow lettuce every 2 weeks\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Avoid fruiting crops (tomatoes, peppers, squash) \\u8212? they need 6\\u8211?8 hours.\\par}
+}"
+`;
+
+exports[`serializeRtf fixture snapshots > serializes simple-text with everything on 1`] = `
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033\\uc1
+{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica{\\*\\falt Calibri};}{\\f1\\fmodern\\fcharset0 Courier New{\\*\\falt Menlo};}}
+{\\colortbl;\\red23\\green37\\blue43;\\red10\\green91\\blue85;\\red180\\green34\\blue55;\\red66\\green85\\blue92;\\red242\\green247\\blue246;}
+{\\pard\\sa120\\keepn\\b\\cf1\\f0\\fs40 Planning a vegetable garden\\par}
+{\\pard\\sa240\\cf4\\f0\\fs16 Created 2026-05-14 09:12 UTC \\u183? Updated 2026-05-14 09:13 UTC \\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}{\\cf4\\fs16  \\u8212?  2026-05-14 09:12 UTC}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 What vegetables grow well in partial shade? I have a north-facing bed that only gets about four hours of sun.\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}{\\cf4\\fs16  \\u8212?  2026-05-14 09:12 UTC}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Four hours of sun is enough for plenty of crops. Leafy greens and many root vegetables actually prefer some shade.\\par}
+\\trowd\\trgaph108\\trleft0\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\clcbpat5\\cellx3120\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\clcbpat5\\cellx6240\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\clcbpat5\\cellx9360\\pard\\intbl\\ql{\\b\\cf1\\f0\\fs22 Crop}\\cell\\pard\\intbl\\ql{\\b\\cf1\\f0\\fs22 Sun needed}\\cell\\pard\\intbl\\ql{\\b\\cf1\\f0\\fs22 Notes}\\cell\\row
+\\trowd\\trgaph108\\trleft0\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx3120\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx6240\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx9360\\pard\\intbl\\ql{\\cf1\\f0\\fs22 Lettuce}\\cell\\pard\\intbl\\ql{\\cf1\\f0\\fs22 3\\u8211?4 h}\\cell\\pard\\intbl\\ql{\\cf1\\f0\\fs22 Bolts slower in shade}\\cell\\row
+\\trowd\\trgaph108\\trleft0\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx3120\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx6240\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx9360\\pard\\intbl\\ql{\\cf1\\f0\\fs22 Spinach}\\cell\\pard\\intbl\\ql{\\cf1\\f0\\fs22 3\\u8211?4 h}\\cell\\pard\\intbl\\ql{\\cf1\\f0\\fs22 Sow early spring}\\cell\\row
+\\trowd\\trgaph108\\trleft0\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx3120\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx6240\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx9360\\pard\\intbl\\ql{\\cf1\\f0\\fs22 Radishes}\\cell\\pard\\intbl\\ql{\\cf1\\f0\\fs22 4 h}\\cell\\pard\\intbl\\ql{\\cf1\\f0\\fs22 Ready in ~30 days}\\cell\\row
+\\trowd\\trgaph108\\trleft0\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx3120\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx6240\\clbrdrt\\brdrs\\brdrw10\\brdrcf4\\clbrdrl\\brdrs\\brdrw10\\brdrcf4\\clbrdrb\\brdrs\\brdrw10\\brdrcf4\\clbrdrr\\brdrs\\brdrw10\\brdrcf4\\cellx9360\\pard\\intbl\\ql{\\cf1\\f0\\fs22 Chard}\\cell\\pard\\intbl\\ql{\\cf1\\f0\\fs22 4 h}\\cell\\pard\\intbl\\ql{\\cf1\\f0\\fs22 Cut-and-come-again}\\cell\\row
+\\pard
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 A simple sowing plan:\\par}
+{\\pard\\li0\\sa120\\cbpat5\\cf1\\f1\\fs20 March:  spinach, radishes\\line April:  lettuce, chard\\line May:    succession-sow lettuce every 2 weeks\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Avoid fruiting crops (tomatoes, peppers, squash) \\u8212? they need 6\\u8211?8 hours.\\par}
+}"
+`;
+
+exports[`serializeRtf fixture snapshots > serializes thinking with default options 1`] = `
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033\\uc1
+{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica{\\*\\falt Calibri};}{\\f1\\fmodern\\fcharset0 Courier New{\\*\\falt Menlo};}}
+{\\colortbl;\\red23\\green37\\blue43;\\red10\\green91\\blue85;\\red180\\green34\\blue55;\\red66\\green85\\blue92;\\red242\\green247\\blue246;}
+{\\pard\\sa120\\keepn\\b\\cf1\\f0\\fs40 Estimating paint for a hallway\\par}
+{\\pard\\sa240\\cf4\\f0\\fs16 Created 2026-05-20 18:44 UTC \\u183? Updated 2026-05-20 18:47 UTC \\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 How many litres of paint do I need for a hallway 6 m long, 1.2 m wide, 2.4 m high, with three doors and one window? Two coats.\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 You'll need about {\\b 4.8 litres}, so buy a 5 L can.\\par}
+{\\pard\\li360\\fi-360\\tx360\\sa60\\cf1\\f0\\fs22 \\bullet\\tab Net wall area: \\u8776? 28.8 m\\u178? (34.6 m\\u178? minus doors and window)\\par}
+{\\pard\\li360\\fi-360\\tx360\\sa60\\cf1\\f0\\fs22 \\bullet\\tab Two coats: \\u8776? 57.6 m\\u178?\\par}
+{\\pard\\li360\\fi-360\\tx360\\sa60\\cf1\\f0\\fs22 \\bullet\\tab At ~12 m\\u178? per litre: \\u8776? 4.8 L\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 And the ceiling?\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 The ceiling is 7.2 m\\u178?, so two coats need about {\\b 1.2 litres} \\u8212? a 2.5 L can of ceiling paint covers it with plenty spare.\\par}
+}"
+`;
+
+exports[`serializeRtf fixture snapshots > serializes thinking with everything on 1`] = `
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033\\uc1
+{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica{\\*\\falt Calibri};}{\\f1\\fmodern\\fcharset0 Courier New{\\*\\falt Menlo};}}
+{\\colortbl;\\red23\\green37\\blue43;\\red10\\green91\\blue85;\\red180\\green34\\blue55;\\red66\\green85\\blue92;\\red242\\green247\\blue246;}
+{\\pard\\sa120\\keepn\\b\\cf1\\f0\\fs40 Estimating paint for a hallway\\par}
+{\\pard\\sa240\\cf4\\f0\\fs16 Created 2026-05-20 18:44 UTC \\u183? Updated 2026-05-20 18:47 UTC \\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}{\\cf4\\fs16  \\u8212?  2026-05-20 18:44 UTC}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 How many litres of paint do I need for a hallway 6 m long, 1.2 m wide, 2.4 m high, with three doors and one window? Two coats.\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}{\\cf4\\fs16  \\u8212?  2026-05-20 18:44 UTC}\\par}
+{\\pard\\li360\\sb120\\sa60\\keepn\\b\\cf4\\f1\\fs20 Thinking\\par}
+{\\pard\\li360\\sa60\\i\\cf4\\f0\\fs16 Calculating wall area minus doors and window\\par}
+{\\pard\\li360\\sa60\\i\\cf4\\f0\\fs16 Converting coverage into litres for two coats\\par}
+{\\pard\\li360\\sa120\\i\\cf4\\f0\\fs20 Wall area: perimeter = 2 \\u215? (6 + 1.2) = 14.4 m. Wall area = 14.4 \\u215? 2.4 = 34.56 m\\u178?.\\par}
+{\\pard\\li360\\sa120\\i\\cf4\\f0\\fs20 Subtract openings: three doors \\u8776? 3 \\u215? (0.76 \\u215? 2.0) = 4.56 m\\u178?. One window \\u8776? 1.2 \\u215? 1.0 = 1.2 m\\u178?. Net \\u8776? 28.8 m\\u178?.\\par}
+{\\pard\\li360\\sa120\\i\\cf4\\f0\\fs20 Two coats \\u8594? 57.6 m\\u178?. Coverage ~12 m\\u178?/L \\u8594? 4.8 L. Recommend 5 L can.\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 You'll need about {\\b 4.8 litres}, so buy a 5 L can.\\par}
+{\\pard\\li360\\fi-360\\tx360\\sa60\\cf1\\f0\\fs22 \\bullet\\tab Net wall area: \\u8776? 28.8 m\\u178? (34.6 m\\u178? minus doors and window)\\par}
+{\\pard\\li360\\fi-360\\tx360\\sa60\\cf1\\f0\\fs22 \\bullet\\tab Two coats: \\u8776? 57.6 m\\u178?\\par}
+{\\pard\\li360\\fi-360\\tx360\\sa60\\cf1\\f0\\fs22 \\bullet\\tab At ~12 m\\u178? per litre: \\u8776? 4.8 L\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}{\\cf4\\fs16  \\u8212?  2026-05-20 18:46 UTC}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 And the ceiling?\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}{\\cf4\\fs16  \\u8212?  2026-05-20 18:46 UTC}\\par}
+{\\pard\\li360\\sb120\\sa60\\keepn\\b\\cf4\\f1\\fs20 Thinking\\par}
+{\\pard\\li360\\sa120\\i\\cf4\\f0\\fs20 Ceiling area = 6 \\u215? 1.2 = 7.2 m\\u178?. Two coats = 14.4 m\\u178?. At 12 m\\u178?/L that is 1.2 L; a 2.5 L can is the smallest sensible size, or 1 L plus a tester.\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 The ceiling is 7.2 m\\u178?, so two coats need about {\\b 1.2 litres} \\u8212? a 2.5 L can of ceiling paint covers it with plenty spare.\\par}
+}"
+`;
+
+exports[`serializeRtf fixture snapshots > serializes tool-use with default options 1`] = `
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033\\uc1
+{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica{\\*\\falt Calibri};}{\\f1\\fmodern\\fcharset0 Courier New{\\*\\falt Menlo};}}
+{\\colortbl;\\red23\\green37\\blue43;\\red10\\green91\\blue85;\\red180\\green34\\blue55;\\red66\\green85\\blue92;\\red242\\green247\\blue246;}
+{\\pard\\sa120\\keepn\\b\\cf1\\f0\\fs40 Ferry times and a currency check\\par}
+{\\pard\\sa240\\cf4\\f0\\fs16 Created 2026-06-02 07:30 UTC \\u183? Updated 2026-06-02 07:33 UTC \\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 When does the first ferry leave Portsmouth for Fishbourne on a weekday? And what's 100 GBP in EUR right now?\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 The first weekday Wightlink sailing from Portsmouth to Fishbourne is at {\\b 06:00} (about 45 minutes crossing).\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 I couldn't fetch a live exchange rate here \\u8212? my code tool has no network access \\u8212? but as of my knowledge, 100 GBP is roughly 115\\u8211?120 EUR. Check your bank's rate for the exact figure.\\par}
+}"
+`;
+
+exports[`serializeRtf fixture snapshots > serializes tool-use with everything on 1`] = `
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033\\uc1
+{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica{\\*\\falt Calibri};}{\\f1\\fmodern\\fcharset0 Courier New{\\*\\falt Menlo};}}
+{\\colortbl;\\red23\\green37\\blue43;\\red10\\green91\\blue85;\\red180\\green34\\blue55;\\red66\\green85\\blue92;\\red242\\green247\\blue246;}
+{\\pard\\sa120\\keepn\\b\\cf1\\f0\\fs40 Ferry times and a currency check\\par}
+{\\pard\\sa240\\cf4\\f0\\fs16 Created 2026-06-02 07:30 UTC \\u183? Updated 2026-06-02 07:33 UTC \\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}{\\cf4\\fs16  \\u8212?  2026-06-02 07:30 UTC}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 When does the first ferry leave Portsmouth for Fishbourne on a weekday? And what's 100 GBP in EUR right now?\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}{\\cf4\\fs16  \\u8212?  2026-06-02 07:30 UTC}\\par}
+{\\pard\\li360\\sb120\\sa60\\keepn\\b\\cf4\\f1\\fs20 Tool use: web_search\\par}
+{\\pard\\li360\\sa120\\cbpat5\\cf1\\f1\\fs20 \\{\\line   "query": "first weekday ferry Portsmouth to Fishbourne timetable"\\line \\}\\par}
+{\\pard\\li360\\sb120\\sa60\\keepn\\b\\cf4\\f1\\fs20 Tool result: web_search\\par}
+{\\pard\\li360\\sa120\\cbpat5\\cf1\\f1\\fs20 Result 1: Wightlink timetable \\u8212? first weekday sailing Portsmouth (Gunwharf) to Fishbourne departs 06:00, crossing time 45 minutes.\\line Result 2: Seasonal variations apply on bank holidays.\\par}
+{\\pard\\li360\\sb120\\sa60\\keepn\\b\\cf4\\f1\\fs20 Tool use: repl\\par}
+{\\pard\\li360\\sa120\\cbpat5\\cf1\\f1\\fs20 \\{\\line   "code": "const rate = await fetchRate('GBP', 'EUR');\\\\nconsole.log(100 * rate);"\\line \\}\\par}
+{\\pard\\li360\\sb120\\sa60\\keepn\\b\\cf3\\f1\\fs20 Tool result (error): repl\\par}
+{\\pard\\li360\\sa120\\cbpat5\\cf3\\f1\\fs20 ReferenceError: fetchRate is not defined\\line     at <anonymous>:1:20\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 The first weekday Wightlink sailing from Portsmouth to Fishbourne is at {\\b 06:00} (about 45 minutes crossing).\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 I couldn't fetch a live exchange rate here \\u8212? my code tool has no network access \\u8212? but as of my knowledge, 100 GBP is roughly 115\\u8211?120 EUR. Check your bank's rate for the exact figure.\\par}
+}"
+`;
+
+exports[`serializeRtf fixture snapshots > serializes unknown-block with default options 1`] = `
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033\\uc1
+{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica{\\*\\falt Calibri};}{\\f1\\fmodern\\fcharset0 Courier New{\\*\\falt Menlo};}}
+{\\colortbl;\\red23\\green37\\blue43;\\red10\\green91\\blue85;\\red180\\green34\\blue55;\\red66\\green85\\blue92;\\red242\\green247\\blue246;}
+{\\pard\\sa120\\keepn\\b\\cf1\\f0\\fs40 Conversation with a block type we do not know\\par}
+{\\pard\\sa240\\cf4\\f0\\fs16 Created 2026-07-01 08:15 UTC \\u183? Updated 2026-07-01 08:16 UTC \\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Show me next Tuesday's weather.\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}\\par}
+{\\pard\\li360\\sb120\\sa60\\keepn\\b\\cf3\\f1\\fs20 Unsupported content (weather_card)\\par}
+{\\pard\\li360\\sa120\\cbpat5\\cf1\\f1\\fs20 \\{\\line   "start_timestamp": "2026-07-01T08:15:57.551204Z",\\line   "stop_timestamp": "2026-07-01T08:16:02.108475Z",\\line   "type": "weather_card",\\line   "location": "Portsmouth, UK",\\line   "forecast": \\{\\line     "day": "Tuesday",\\line     "high_c": 22,\\line     "low_c": 14,\\line     "condition": "partly_cloudy"\\line   \\}\\line \\}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Next Tuesday in Portsmouth looks partly cloudy with a high of 22\\u176?C and a low of 14\\u176?C \\u8212? a decent day for the allotment.\\par}
+}"
+`;
+
+exports[`serializeRtf fixture snapshots > serializes unknown-block with everything on 1`] = `
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033\\uc1
+{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica{\\*\\falt Calibri};}{\\f1\\fmodern\\fcharset0 Courier New{\\*\\falt Menlo};}}
+{\\colortbl;\\red23\\green37\\blue43;\\red10\\green91\\blue85;\\red180\\green34\\blue55;\\red66\\green85\\blue92;\\red242\\green247\\blue246;}
+{\\pard\\sa120\\keepn\\b\\cf1\\f0\\fs40 Conversation with a block type we do not know\\par}
+{\\pard\\sa240\\cf4\\f0\\fs16 Created 2026-07-01 08:15 UTC \\u183? Updated 2026-07-01 08:16 UTC \\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Human}{\\cf4\\fs16  \\u8212?  2026-07-01 08:15 UTC}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Show me next Tuesday's weather.\\par}
+{\\pard\\sb240\\sa120\\keepn\\f0 {\\b\\cf2\\fs26 Claude}{\\cf4\\fs16  \\u8212?  2026-07-01 08:15 UTC}\\par}
+{\\pard\\li360\\sb120\\sa60\\keepn\\b\\cf3\\f1\\fs20 Unsupported content (weather_card)\\par}
+{\\pard\\li360\\sa120\\cbpat5\\cf1\\f1\\fs20 \\{\\line   "start_timestamp": "2026-07-01T08:15:57.551204Z",\\line   "stop_timestamp": "2026-07-01T08:16:02.108475Z",\\line   "type": "weather_card",\\line   "location": "Portsmouth, UK",\\line   "forecast": \\{\\line     "day": "Tuesday",\\line     "high_c": 22,\\line     "low_c": 14,\\line     "condition": "partly_cloudy"\\line   \\}\\line \\}\\par}
+{\\pard\\li0\\sa120\\cf1\\f0\\fs22 Next Tuesday in Portsmouth looks partly cloudy with a high of 22\\u176?C and a low of 14\\u176?C \\u8212? a decent day for the allotment.\\par}
+}"
+`;
