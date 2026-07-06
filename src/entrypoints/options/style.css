@@ -69,7 +69,7 @@
     --hc-accent-tint: #2a4c48;
 
     --hc-border: #263a3e;
-    --hc-border-strong: #56706c;
+    --hc-border-strong: #5b7671;
 
     --hc-focus: #53c4b7;
 
@@ -287,6 +287,13 @@ a {
 
 .about-links li + li {
   margin-top: var(--hc-space-1);
+}
+
+/* Standalone links in a list are not "inline in a sentence", so the
+   WCAG 2.5.8 inline exception does not apply: pad each to ≥ 24px tall. */
+.about-links a {
+  display: inline-block;
+  padding: var(--hc-space-1) 0;
 }
 
 /* Saved indicator: visible confirmation and the polite live region in one.

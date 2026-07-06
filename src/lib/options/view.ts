@@ -88,7 +88,15 @@ export function createOptionsView(doc: Document, context: OptionsViewContext = {
     autocomplete: 'off',
     'aria-describedby': 'template-help template-error template-preview',
   });
-  const templateError = el(doc, 'p', { class: 'field-error', id: 'template-error', hidden: '' });
+  // A permanent polite live region (never `hidden`, never removed): showing
+  // a validation message by setting its text is what makes screen readers
+  // announce it without stealing focus (WCAG 4.1.3 — status messages).
+  const templateError = el(doc, 'p', {
+    class: 'field-error',
+    id: 'template-error',
+    role: 'status',
+    'aria-live': 'polite',
+  });
   const previewValue = el(doc, 'span', { class: 'filename' });
   const templateReset = el(doc, 'button', { class: 'button-secondary', type: 'button' }, [
     t('filenameResetButton'),
@@ -225,11 +233,9 @@ export function createOptionsView(doc: Document, context: OptionsViewContext = {
     },
     renderTemplateError(message: string | null): void {
       if (message === null) {
-        templateError.hidden = true;
         templateError.textContent = '';
         templateInput.removeAttribute('aria-invalid');
       } else {
-        templateError.hidden = false;
         templateError.textContent = message;
         templateInput.setAttribute('aria-invalid', 'true');
       }

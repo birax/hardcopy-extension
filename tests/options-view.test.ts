@@ -103,8 +103,14 @@ describe('options view', () => {
         t('filenameTemplateHelp'),
       );
       expect(view.form.querySelector('#template-preview')).not.toBeNull();
-      // The error region exists (for aria-describedby) but starts hidden.
-      expect(view.form.querySelector<HTMLElement>('#template-error')?.hidden).toBe(true);
+      // The error region is a permanent polite live region that starts empty:
+      // it must already be in the DOM (and never display:none) for screen
+      // readers to announce validation messages when they appear (WCAG 4.1.3).
+      const error = view.form.querySelector<HTMLElement>('#template-error');
+      expect(error?.getAttribute('role')).toBe('status');
+      expect(error?.getAttribute('aria-live')).toBe('polite');
+      expect(error?.hasAttribute('hidden')).toBe(false);
+      expect(error?.textContent).toBe('');
     });
 
     it('marks the saved indicator as a polite status region', () => {
@@ -190,12 +196,13 @@ describe('options view', () => {
     it('shows and clears the validation error, toggling aria-invalid', () => {
       view.renderTemplateError('That placeholder is unknown.');
       const error = view.form.querySelector<HTMLElement>('#template-error');
-      expect(error?.hidden).toBe(false);
       expect(error?.textContent).toBe('That placeholder is unknown.');
       expect(view.templateInput.getAttribute('aria-invalid')).toBe('true');
 
       view.renderTemplateError(null);
-      expect(error?.hidden).toBe(true);
+      // Cleared by emptying the live region, never by hiding it: toggling
+      // `hidden` on a live region makes announcements unreliable.
+      expect(error?.hasAttribute('hidden')).toBe(false);
       expect(error?.textContent).toBe('');
       expect(view.templateInput.hasAttribute('aria-invalid')).toBe(false);
     });

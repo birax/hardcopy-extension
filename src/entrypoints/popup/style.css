@@ -68,7 +68,7 @@
     --hc-accent-tint: #2a4c48;
 
     --hc-border: #263a3e;
-    --hc-border-strong: #56706c;
+    --hc-border-strong: #5b7671;
 
     --hc-focus: #53c4b7;
 
@@ -224,6 +224,8 @@ body {
   font-size: 0.75rem;
   line-height: 1rem;
   border-radius: var(--hc-radius-sm);
+  /* 16px line + 2×4px padding = a 24px-tall target (WCAG 2.5.8). */
+  padding: var(--hc-space-1) 0;
 }
 
 .warning-list {

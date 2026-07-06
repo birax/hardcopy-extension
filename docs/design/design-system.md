@@ -77,7 +77,7 @@ popup follows the browser, it does not ship its own theme toggle in v1).
     --hc-accent-tint: #2a4c48;
 
     --hc-border: #263a3e;
-    --hc-border-strong: #56706c;
+    --hc-border-strong: #5b7671; /* ≥ 3:1 on bg AND bg-subtle (hover wells) */
 
     --hc-focus: #53c4b7;
 
@@ -106,11 +106,13 @@ Light theme:
 | `on-accent` on `accent`        | **7.95:1**  | 4.5:1                 | AAA     |
 | `on-accent` on `accent-hover`  | **11.01:1** | 4.5:1                 | AAA     |
 | `border-strong` on `bg`        | **4.25:1**  | 3:1 (non-text UI)     | Pass    |
+| `border-strong` on `bg-subtle` | **3.93:1**  | 3:1 (non-text UI)     | Pass    |
 | `focus` on `bg`                | **7.95:1**  | 3:1 (focus indicator) | Pass    |
 | `success` on `success-bg`      | **5.77:1**  | 4.5:1                 | AA      |
 | `error` on `error-bg`          | **5.65:1**  | 4.5:1                 | AA      |
 | `warn` on `warn-bg`            | **6.41:1**  | 4.5:1                 | AA      |
 | `success` / `error` / `warn` on `bg` | **6.66 / 6.51 / 7.06:1** | 4.5:1 | AA–AAA |
+| `warn` on `success-bg` (degraded note) | **6.11:1** | 4.5:1          | AA      |
 
 Dark theme:
 
@@ -124,11 +126,16 @@ Dark theme:
 | `accent` on `bg-subtle`        | **7.53:1**  | 4.5:1       | AAA    |
 | `on-accent` on `accent`        | **7.69:1**  | 4.5:1       | AAA    |
 | `on-accent` on `accent-hover`  | **10.37:1** | 4.5:1       | AAA    |
-| `border-strong` on `bg`        | **3.31:1**  | 3:1         | Pass   |
+| `border-strong` on `bg`        | **3.60:1**  | 3:1         | Pass   |
+| `border-strong` on `bg-subtle` | **3.23:1**  | 3:1         | Pass   |
 | `focus` on `bg`                | **8.38:1**  | 3:1         | Pass   |
 | `success` on `bg-subtle`       | **8.23:1**  | 4.5:1       | AAA    |
 | `error` on `bg-subtle`         | **6.78:1**  | 4.5:1       | AA     |
 | `warn` on `bg-subtle`          | **8.58:1**  | 4.5:1       | AAA    |
+| `success` on `success-bg`      | **8.22:1**  | 4.5:1       | AAA    |
+| `error` on `error-bg`          | **7.14:1**  | 4.5:1       | AAA    |
+| `warn` on `warn-bg`            | **8.48:1**  | 4.5:1       | AAA    |
+| `warn` on `success-bg` (degraded note) | **8.57:1** | 4.5:1 | AAA    |
 
 Rules of use:
 

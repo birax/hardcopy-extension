@@ -2,7 +2,7 @@
   "name": "hardcopy",
   "version": "0.0.1",
   "private": true,
-  "description": "Export your Claude conversations as Markdown, PDF, Word, RTF and plain text \u2014 fully in your browser.",
+  "description": "Export your Claude conversations as Markdown, PDF, Word, RTF and plain text — fully in your browser.",
   "type": "module",
   "license": "MIT",
   "repository": {
@@ -33,6 +33,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@vitest/coverage-v8": "^4.1.10",
+    "axe-core": "^4.12.1",
     "eslint": "^10.6.0",
     "eslint-config-prettier": "^10.1.8",
     "happy-dom": "^20.10.6",

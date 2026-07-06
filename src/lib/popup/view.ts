@@ -80,9 +80,13 @@ export function createPopupView(doc: Document): PopupView {
   );
 
   const progressLabel = el(doc, 'p', { class: 'progress-label' }, [t('statusExporting')]);
+  // The sliding bar is decoration; the visible label and the aria-live
+  // status region carry the "exporting" state for assistive tech.
   const progress = el(doc, 'div', { class: 'progress', hidden: '' }, [
     progressLabel,
-    el(doc, 'div', { class: 'progress-track' }, [el(doc, 'div', { class: 'progress-fill' })]),
+    el(doc, 'div', { class: 'progress-track', 'aria-hidden': 'true' }, [
+      el(doc, 'div', { class: 'progress-fill' }),
+    ]),
   ]);
 
   const form = el(doc, 'form', { class: 'options' }, [
