@@ -37,15 +37,17 @@ zips for chrome/firefox/edge. All of it must be green before merging.
 
 ## Loading the unpacked extension
 
-First run a build for the browser you're targeting, then:
+First run a build for the browser you're targeting, then follow the step-by-step
+guides in [`docs/install/`](install/):
 
-- **Chrome** — `chrome://extensions` → enable **Developer mode** → **Load unpacked** →
-  select `.output/chrome-mv3/`.
-- **Edge** — `edge://extensions` → enable **Developer mode** → **Load unpacked** →
-  select `.output/edge-mv3/`.
-- **Firefox** — `about:debugging#/runtime/this-firefox` → **Load Temporary Add-on…** →
-  select any file inside `.output/firefox-mv3/` (e.g. `manifest.json`). Temporary add-ons
-  are removed when Firefox restarts.
+- **Chrome** — [install/chrome.md](install/chrome.md) (`chrome://extensions` → Load
+  unpacked → `.output/chrome-mv3/`).
+- **Edge** — [install/edge.md](install/edge.md) (`edge://extensions` → Load unpacked →
+  `.output/edge-mv3/`).
+- **Firefox** — [install/firefox.md](install/firefox.md) (`about:debugging` temporary
+  add-on; removed when Firefox restarts).
+- **Safari** — [install/safari.md](install/safari.md) (build `pnpm wxt build -b safari`,
+  then build/run the committed Xcode wrapper under `safari/`; requires full Xcode).
 
 For day-to-day work prefer `pnpm dev` (Chrome) or `pnpm dev -b firefox`, which loads the
 extension automatically and hot-reloads on change.
