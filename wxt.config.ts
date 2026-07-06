@@ -11,9 +11,11 @@ export default defineConfig({
   // MV3 everywhere, including Firefox (WXT would otherwise default Firefox to MV2).
   manifestVersion: 3,
   manifest: ({ browser }) => ({
-    name: 'Hardcopy',
-    description:
-      'Export your Claude conversations as Markdown, PDF, Word, RTF and plain text — fully in your browser.',
+    // Name and description resolve from public/_locales/<locale>/messages.json
+    // (issue #18); the canonical English strings live in _locales/en.
+    name: '__MSG_extName__',
+    description: '__MSG_extDescription__',
+    default_locale: 'en',
     host_permissions: ['https://claude.ai/*'],
     // NOTE: the export flow downloads via an in-page blob + anchor click
     // (src/lib/flow/download.ts), so `downloads` is currently unused by it.

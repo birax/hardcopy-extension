@@ -3,29 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The visible UI is rendered by main.ts so every string flows through
+         the i18n layer (issue #18); this shell stays intentionally empty. -->
     <title>Hardcopy</title>
-    <style>
-      body {
-        font-family: system-ui, sans-serif;
-        margin: 0;
-        min-width: 16rem;
-      }
-      main {
-        padding: 1rem;
-      }
-      h1 {
-        font-size: 1.125rem;
-        margin: 0 0 0.5rem;
-      }
-      p {
-        margin: 0;
-      }
-    </style>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <main>
-      <h1>Hardcopy</h1>
-      <p>Export UI coming soon.</p>
-    </main>
+    <script type="module" src="./main.ts"></script>
   </body>
 </html>

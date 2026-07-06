@@ -62,6 +62,24 @@ extension automatically and hot-reloads on change.
 - No runtime network requests to anything other than `claude.ai`, no telemetry, no remote
   code — this is a hard rule (see [ADR 0002](decisions/0002-fully-client-side-no-external-dependencies.md)).
 
+## Adding a locale
+
+All user-visible strings live in `public/_locales/en/messages.json` and are read through
+the typed `t()` helper in `src/lib/i18n.ts` (the manifest name/description resolve from
+the same catalogue via `__MSG_extName__`/`__MSG_extDescription__`). To add a locale:
+
+1. Copy `public/_locales/en/` to `public/_locales/<code>/` (e.g. `de`, `pt_BR` — see the
+   [supported locale codes](https://developer.chrome.com/docs/extensions/reference/api/i18n#locales)).
+2. Translate each `"message"` value. Keep the `$1`-style placeholders, don't translate
+   the keys, and keep the ADR 0004 non-affiliation disclaimer's meaning exact.
+3. The `"description"` fields explain where each string appears — they are for you and
+   stay in English.
+
+That's the whole change: keys are typed from the English catalogue, so a `t()` call with
+an unknown key fails the type check, and `tests/i18n.test.ts` fails when a catalogue
+entry is unused or missing. English remains the fallback (`default_locale`) for any
+string a locale doesn't cover.
+
 ## Architecture decisions (ADRs)
 
 Any significant design choice gets an ADR in [`docs/decisions/`](decisions/), numbered

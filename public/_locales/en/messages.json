@@ -1,0 +1,166 @@
+{
+  "extName": {
+    "message": "Hardcopy",
+    "description": "Extension name shown in stores and the browser toolbar."
+  },
+  "extDescription": {
+    "message": "Export your Claude conversations as Markdown, PDF, Word, RTF and plain text — fully in your browser.",
+    "description": "Extension description shown in stores and the extensions page."
+  },
+  "popupTitle": {
+    "message": "Hardcopy",
+    "description": "Heading at the top of the popup."
+  },
+  "statusProbing": {
+    "message": "Checking this tab…",
+    "description": "Shown briefly while the popup asks the page what it is."
+  },
+  "unsupportedHeading": {
+    "message": "Nothing to export here",
+    "description": "Heading when the active tab is not a claude.ai page."
+  },
+  "unsupportedBody": {
+    "message": "Hardcopy works on claude.ai conversations. Open a conversation on claude.ai, then open this popup again.",
+    "description": "Explainer when the active tab is not a claude.ai page."
+  },
+  "staleTabHeading": {
+    "message": "Reload the claude.ai tab",
+    "description": "Heading when the tab is on claude.ai but Hardcopy cannot reach it."
+  },
+  "staleTabBody": {
+    "message": "Hardcopy can't reach this page yet — the tab may have been open since before Hardcopy was installed. Reload the tab, then open this popup again.",
+    "description": "Explainer when the tab is on claude.ai but the content script is not loaded."
+  },
+  "noConversationHeading": {
+    "message": "No conversation open",
+    "description": "Heading when the claude.ai tab has no conversation open."
+  },
+  "noConversationBody": {
+    "message": "This tab is on claude.ai, but no conversation is open. Open the conversation you want to export, then try again.",
+    "description": "Explainer when the claude.ai tab has no conversation open."
+  },
+  "loggedOutHeading": {
+    "message": "Logged out of claude.ai",
+    "description": "Heading when the claude.ai session is not authenticated."
+  },
+  "loggedOutBody": {
+    "message": "Log in to claude.ai in this tab, then open this popup again.",
+    "description": "Explainer when the claude.ai session is not authenticated."
+  },
+  "untitledConversation": {
+    "message": "Untitled conversation",
+    "description": "Placeholder title when the open conversation has no readable title."
+  },
+  "statusExporting": {
+    "message": "Exporting…",
+    "description": "Progress label and live announcement while an export runs."
+  },
+  "successHeading": {
+    "message": "Saved to Downloads",
+    "description": "Heading of the success banner after an export finishes."
+  },
+  "savedAnnouncement": {
+    "message": "Saved to Downloads — $1",
+    "description": "Screen-reader announcement after a successful export. $1 is the filename."
+  },
+  "successDegraded": {
+    "message": "This file was built from the rendered page instead of the claude.ai API, so parts of the conversation may be missing. The warnings below list what could not be recovered.",
+    "description": "Note on the success banner when the export came from the DOM fallback."
+  },
+  "warningsSummary": {
+    "message": "Warnings ($1)",
+    "description": "Disclosure label for export warnings. $1 is the number of warnings."
+  },
+  "failureHeading": {
+    "message": "Export failed",
+    "description": "Heading of the failure banner."
+  },
+  "failedAnnouncement": {
+    "message": "Export failed — $1",
+    "description": "Screen-reader announcement after a failed export. $1 is the failure message."
+  },
+  "technicalDetail": {
+    "message": "Technical detail",
+    "description": "Disclosure label for the technical detail of a failure."
+  },
+  "exportNoResponse": {
+    "message": "claude.ai didn't respond — reload the tab and try again.",
+    "description": "Failure message when the page never answered the export request."
+  },
+  "formatLegend": {
+    "message": "Format",
+    "description": "Legend of the format radio group."
+  },
+  "formatMarkdown": {
+    "message": "Markdown",
+    "description": "Label of the Markdown format option."
+  },
+  "formatText": {
+    "message": "Plain text",
+    "description": "Label of the plain-text format option."
+  },
+  "formatRtf": {
+    "message": "Rich Text (RTF)",
+    "description": "Label of the RTF format option."
+  },
+  "formatDocx": {
+    "message": "Word (DOCX)",
+    "description": "Label of the Word format option."
+  },
+  "formatPdf": {
+    "message": "PDF",
+    "description": "Label of the PDF format option."
+  },
+  "includeLegend": {
+    "message": "Include",
+    "description": "Legend of the include-options checkbox group."
+  },
+  "optionThinking": {
+    "message": "Thinking blocks",
+    "description": "Checkbox label: include extended-thinking blocks."
+  },
+  "optionToolUse": {
+    "message": "Tool use",
+    "description": "Checkbox label: include tool invocations."
+  },
+  "optionToolResults": {
+    "message": "Tool results",
+    "description": "Checkbox label: include tool results."
+  },
+  "optionArtifacts": {
+    "message": "Artifacts",
+    "description": "Checkbox label: include artifact content snapshots."
+  },
+  "optionAttachments": {
+    "message": "Attachments",
+    "description": "Checkbox label: include attachments and uploaded files."
+  },
+  "optionTimestamps": {
+    "message": "Timestamps",
+    "description": "Checkbox label: include per-message timestamps."
+  },
+  "optionMetadata": {
+    "message": "Title and dates",
+    "description": "Checkbox label: include the conversation header (title, created/updated dates)."
+  },
+  "branchesLegend": {
+    "message": "Branches",
+    "description": "Legend of the branches radio group."
+  },
+  "branchCurrent": {
+    "message": "Current branch",
+    "description": "Radio label: export only the branch claude.ai currently shows."
+  },
+  "branchAll": {
+    "message": "All branches",
+    "description": "Radio label: export every branch of an edited conversation."
+  },
+  "exportButton": {
+    "message": "Export",
+    "description": "Label of the primary export button."
+  },
+  "disclaimer": {
+    "message": "Hardcopy is an independent open-source project, not affiliated with, endorsed by, or sponsored by Anthropic. Claude is a trademark of Anthropic, PBC.",
+    "description": "Non-affiliation disclaimer (ADR 0004). Translate the sentence but keep its meaning exact; 'Hardcopy', 'Anthropic', 'Claude' and 'Anthropic, PBC' are proper names."
+  }
+}
