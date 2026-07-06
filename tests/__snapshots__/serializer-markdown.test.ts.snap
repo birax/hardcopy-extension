@@ -1,0 +1,915 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`serializeMarkdown fixture snapshots > renders artifacts (branches-all) 1`] = `
+"# Tip calculator script
+
+*Created: 2026-06-10 14:05 UTC · Updated: 2026-06-10 14:11 UTC*
+
+## Human
+
+Write me a tiny Python script that calculates a tip and splits the bill.
+
+## Claude
+
+### Artifact: Tip calculator
+
+*application/vnd.ant.code · create*
+
+\`\`\`python
+def tip(bill: float, percent: float = 12.5) -> float:
+    return round(bill * percent / 100, 2)
+
+
+if __name__ == "__main__":
+    bill = float(input("Bill amount: "))
+    print(f"Tip: {tip(bill)}")
+\`\`\`
+
+Here's a minimal tip calculator. Run it and enter the bill amount when prompted.
+
+## Human
+
+Add splitting between diners, and make the default tip 15%.
+
+## Claude
+
+### Artifact: Tip calculator
+
+*application/vnd.ant.code · update*
+
+\`\`\`python
+def tip(bill: float, percent: float = 15.0) -> float:
+    return round(bill * percent / 100, 2)
+
+
+if __name__ == "__main__":
+    bill = float(input("Bill amount: "))
+    print(f"Tip: {tip(bill)}")
+\`\`\`
+
+### Artifact: Tip calculator
+
+*application/vnd.ant.code · update · final version*
+
+\`\`\`python
+def tip(bill: float, percent: float = 15.0) -> float:
+    return round(bill * percent / 100, 2)
+
+
+if __name__ == "__main__":
+    bill = float(input("Bill amount: "))
+    diners = int(input("Diners: "))
+    total = bill + tip(bill)
+    print(f"Tip: {tip(bill)}")
+    print(f"Each pays: {round(total / diners, 2)}")
+\`\`\`
+
+Done — the default tip is now 15% and the script asks how many diners to split between.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders artifacts (defaults) 1`] = `
+"# Tip calculator script
+
+*Created: 2026-06-10 14:05 UTC · Updated: 2026-06-10 14:11 UTC*
+
+## Human
+
+Write me a tiny Python script that calculates a tip and splits the bill.
+
+## Claude
+
+### Artifact: Tip calculator
+
+*application/vnd.ant.code · create*
+
+\`\`\`python
+def tip(bill: float, percent: float = 12.5) -> float:
+    return round(bill * percent / 100, 2)
+
+
+if __name__ == "__main__":
+    bill = float(input("Bill amount: "))
+    print(f"Tip: {tip(bill)}")
+\`\`\`
+
+Here's a minimal tip calculator. Run it and enter the bill amount when prompted.
+
+## Human
+
+Add splitting between diners, and make the default tip 15%.
+
+## Claude
+
+### Artifact: Tip calculator
+
+*application/vnd.ant.code · update*
+
+\`\`\`python
+def tip(bill: float, percent: float = 15.0) -> float:
+    return round(bill * percent / 100, 2)
+
+
+if __name__ == "__main__":
+    bill = float(input("Bill amount: "))
+    print(f"Tip: {tip(bill)}")
+\`\`\`
+
+### Artifact: Tip calculator
+
+*application/vnd.ant.code · update · final version*
+
+\`\`\`python
+def tip(bill: float, percent: float = 15.0) -> float:
+    return round(bill * percent / 100, 2)
+
+
+if __name__ == "__main__":
+    bill = float(input("Bill amount: "))
+    diners = int(input("Diners: "))
+    total = bill + tip(bill)
+    print(f"Tip: {tip(bill)}")
+    print(f"Each pays: {round(total / diners, 2)}")
+\`\`\`
+
+Done — the default tip is now 15% and the script asks how many diners to split between.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders artifacts (everything-on) 1`] = `
+"# Tip calculator script
+
+*Created: 2026-06-10 14:05 UTC · Updated: 2026-06-10 14:11 UTC*
+
+## Human
+
+*2026-06-10 14:05 UTC*
+
+Write me a tiny Python script that calculates a tip and splits the bill.
+
+## Claude
+
+*2026-06-10 14:05 UTC*
+
+### Artifact: Tip calculator
+
+*application/vnd.ant.code · create*
+
+\`\`\`python
+def tip(bill: float, percent: float = 12.5) -> float:
+    return round(bill * percent / 100, 2)
+
+
+if __name__ == "__main__":
+    bill = float(input("Bill amount: "))
+    print(f"Tip: {tip(bill)}")
+\`\`\`
+
+**Tool result: artifacts**
+
+\`\`\`
+OK
+\`\`\`
+
+Here's a minimal tip calculator. Run it and enter the bill amount when prompted.
+
+## Human
+
+*2026-06-10 14:08 UTC*
+
+Add splitting between diners, and make the default tip 15%.
+
+## Claude
+
+*2026-06-10 14:08 UTC*
+
+### Artifact: Tip calculator
+
+*application/vnd.ant.code · update*
+
+\`\`\`python
+def tip(bill: float, percent: float = 15.0) -> float:
+    return round(bill * percent / 100, 2)
+
+
+if __name__ == "__main__":
+    bill = float(input("Bill amount: "))
+    print(f"Tip: {tip(bill)}")
+\`\`\`
+
+**Tool result: artifacts**
+
+\`\`\`
+OK
+\`\`\`
+
+### Artifact: Tip calculator
+
+*application/vnd.ant.code · update · final version*
+
+\`\`\`python
+def tip(bill: float, percent: float = 15.0) -> float:
+    return round(bill * percent / 100, 2)
+
+
+if __name__ == "__main__":
+    bill = float(input("Bill amount: "))
+    diners = int(input("Diners: "))
+    total = bill + tip(bill)
+    print(f"Tip: {tip(bill)}")
+    print(f"Each pays: {round(total / diners, 2)}")
+\`\`\`
+
+**Tool result: artifacts**
+
+\`\`\`
+OK
+\`\`\`
+
+Done — the default tip is now 15% and the script asks how many diners to split between.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders attachments-files (branches-all) 1`] = `
+"# Summarise my meeting notes
+
+*Created: 2026-06-18 11:20 UTC · Updated: 2026-06-18 11:21 UTC*
+
+## Human
+
+Summarise the attached notes into three action points, and keep the spreadsheet in mind for context.
+
+## Claude
+
+Three action points from your notes:
+
+1. **Chase sign-off** on the onboarding flow before the demo on the 19th.
+2. **Unblock the data migration** by getting access to the legacy exports.
+3. **Review Sarah's release notes** draft once it lands.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders attachments-files (defaults) 1`] = `
+"# Summarise my meeting notes
+
+*Created: 2026-06-18 11:20 UTC · Updated: 2026-06-18 11:21 UTC*
+
+## Human
+
+Summarise the attached notes into three action points, and keep the spreadsheet in mind for context.
+
+## Claude
+
+Three action points from your notes:
+
+1. **Chase sign-off** on the onboarding flow before the demo on the 19th.
+2. **Unblock the data migration** by getting access to the legacy exports.
+3. **Review Sarah's release notes** draft once it lands.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders attachments-files (everything-on) 1`] = `
+"# Summarise my meeting notes
+
+*Created: 2026-06-18 11:20 UTC · Updated: 2026-06-18 11:21 UTC*
+
+## Human
+
+*2026-06-18 11:20 UTC*
+
+**Attachment: meeting-notes.txt** (text/plain)
+
+\`\`\`
+Sprint review 12 June
+- Sign-off pending on the onboarding flow
+- Data migration blocked on access to the legacy exports
+- Sarah to draft the release notes
+- Next demo scheduled for the 19th
+\`\`\`
+
+**File: budget-q3.xlsx** (document)
+
+Summarise the attached notes into three action points, and keep the spreadsheet in mind for context.
+
+## Claude
+
+*2026-06-18 11:20 UTC*
+
+Three action points from your notes:
+
+1. **Chase sign-off** on the onboarding flow before the demo on the 19th.
+2. **Unblock the data migration** by getting access to the legacy exports.
+3. **Review Sarah's release notes** draft once it lands.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders branched-tree (branches-all) 1`] = `
+"# Birthday cake ideas
+
+*Created: 2026-06-25 19:40 UTC · Updated: 2026-06-25 19:52 UTC*
+
+---
+
+## Branch 1 of 2
+
+## Human
+
+I'm baking a birthday cake for my dad this weekend. He likes coffee flavours.
+
+## Claude
+
+A classic **coffee and walnut cake** would be perfect — two sponge layers flavoured with strong espresso, filled and topped with coffee buttercream and walnut halves. Want the full recipe?
+
+## Human
+
+Yes, give me the recipe for an 8-inch tin.
+
+## Claude
+
+**Coffee & walnut cake (8-inch)**
+
+Sponge: 225 g butter, 225 g caster sugar, 4 eggs, 225 g self-raising flour, 2 tbsp espresso, 75 g chopped walnuts. Bake 25 min at 180°C.
+
+Buttercream: 125 g butter, 250 g icing sugar, 1 tbsp espresso.
+
+---
+
+## Branch 2 of 2 (default)
+
+## Human
+
+I'm baking a birthday cake for my dad this weekend. He likes coffee flavours.
+
+## Claude
+
+A classic **coffee and walnut cake** would be perfect — two sponge layers flavoured with strong espresso, filled and topped with coffee buttercream and walnut halves. Want the full recipe?
+
+## Human
+
+Actually he can't eat nuts — can you make it coffee-only, for an 8-inch tin?
+
+## Claude
+
+No problem — skip the walnuts entirely.
+
+**Coffee cake (8-inch, nut-free)**
+
+Sponge: 225 g butter, 225 g caster sugar, 4 eggs, 225 g self-raising flour, 3 tbsp espresso. Bake 25 min at 180°C.
+
+Buttercream: 125 g butter, 250 g icing sugar, 1½ tbsp espresso. Decorate with chocolate-coated coffee beans instead of walnut halves.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders branched-tree (defaults) 1`] = `
+"# Birthday cake ideas
+
+*Created: 2026-06-25 19:40 UTC · Updated: 2026-06-25 19:52 UTC*
+
+## Human
+
+I'm baking a birthday cake for my dad this weekend. He likes coffee flavours.
+
+## Claude
+
+A classic **coffee and walnut cake** would be perfect — two sponge layers flavoured with strong espresso, filled and topped with coffee buttercream and walnut halves. Want the full recipe?
+
+## Human
+
+Actually he can't eat nuts — can you make it coffee-only, for an 8-inch tin?
+
+## Claude
+
+No problem — skip the walnuts entirely.
+
+**Coffee cake (8-inch, nut-free)**
+
+Sponge: 225 g butter, 225 g caster sugar, 4 eggs, 225 g self-raising flour, 3 tbsp espresso. Bake 25 min at 180°C.
+
+Buttercream: 125 g butter, 250 g icing sugar, 1½ tbsp espresso. Decorate with chocolate-coated coffee beans instead of walnut halves.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders branched-tree (everything-on) 1`] = `
+"# Birthday cake ideas
+
+*Created: 2026-06-25 19:40 UTC · Updated: 2026-06-25 19:52 UTC*
+
+---
+
+## Branch 1 of 2
+
+## Human
+
+*2026-06-25 19:40 UTC*
+
+I'm baking a birthday cake for my dad this weekend. He likes coffee flavours.
+
+## Claude
+
+*2026-06-25 19:40 UTC*
+
+A classic **coffee and walnut cake** would be perfect — two sponge layers flavoured with strong espresso, filled and topped with coffee buttercream and walnut halves. Want the full recipe?
+
+## Human
+
+*2026-06-25 19:41 UTC*
+
+Yes, give me the recipe for an 8-inch tin.
+
+## Claude
+
+*2026-06-25 19:41 UTC*
+
+**Coffee & walnut cake (8-inch)**
+
+Sponge: 225 g butter, 225 g caster sugar, 4 eggs, 225 g self-raising flour, 2 tbsp espresso, 75 g chopped walnuts. Bake 25 min at 180°C.
+
+Buttercream: 125 g butter, 250 g icing sugar, 1 tbsp espresso.
+
+---
+
+## Branch 2 of 2 (default)
+
+## Human
+
+*2026-06-25 19:40 UTC*
+
+I'm baking a birthday cake for my dad this weekend. He likes coffee flavours.
+
+## Claude
+
+*2026-06-25 19:40 UTC*
+
+A classic **coffee and walnut cake** would be perfect — two sponge layers flavoured with strong espresso, filled and topped with coffee buttercream and walnut halves. Want the full recipe?
+
+## Human
+
+*2026-06-25 19:50 UTC*
+
+Actually he can't eat nuts — can you make it coffee-only, for an 8-inch tin?
+
+## Claude
+
+*2026-06-25 19:50 UTC*
+
+No problem — skip the walnuts entirely.
+
+**Coffee cake (8-inch, nut-free)**
+
+Sponge: 225 g butter, 225 g caster sugar, 4 eggs, 225 g self-raising flour, 3 tbsp espresso. Bake 25 min at 180°C.
+
+Buttercream: 125 g butter, 250 g icing sugar, 1½ tbsp espresso. Decorate with chocolate-coated coffee beans instead of walnut halves.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders images (branches-all) 1`] = `
+"# What plant is this?
+
+*Created: 2026-06-21 16:02 UTC · Updated: 2026-06-21 16:03 UTC*
+
+## Human
+
+*Image (image/png)*
+
+Found this growing at the edge of the lawn — any idea what it is?
+
+## Claude
+
+That looks like **creeping buttercup** (*Ranunculus repens*) — note the three-lobed leaves with pale patches and the runners spreading along the ground. It's common in damp lawns. If you want it gone, dig out the runners before it flowers; mowing alone won't stop it.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders images (defaults) 1`] = `
+"# What plant is this?
+
+*Created: 2026-06-21 16:02 UTC · Updated: 2026-06-21 16:03 UTC*
+
+## Human
+
+*Image (image/png)*
+
+Found this growing at the edge of the lawn — any idea what it is?
+
+## Claude
+
+That looks like **creeping buttercup** (*Ranunculus repens*) — note the three-lobed leaves with pale patches and the runners spreading along the ground. It's common in damp lawns. If you want it gone, dig out the runners before it flowers; mowing alone won't stop it.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders images (everything-on) 1`] = `
+"# What plant is this?
+
+*Created: 2026-06-21 16:02 UTC · Updated: 2026-06-21 16:03 UTC*
+
+## Human
+
+*2026-06-21 16:02 UTC*
+
+**File: IMG\\_4207.png** (image)
+
+*Image (image/png)*
+
+Found this growing at the edge of the lawn — any idea what it is?
+
+## Claude
+
+*2026-06-21 16:02 UTC*
+
+That looks like **creeping buttercup** (*Ranunculus repens*) — note the three-lobed leaves with pale patches and the runners spreading along the ground. It's common in damp lawns. If you want it gone, dig out the runners before it flowers; mowing alone won't stop it.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders simple-text (branches-all) 1`] = `
+"# Planning a vegetable garden
+
+*Created: 2026-05-14 09:12 UTC · Updated: 2026-05-14 09:13 UTC*
+
+## Human
+
+What vegetables grow well in partial shade? I have a north-facing bed that only gets about four hours of sun.
+
+## Claude
+
+Four hours of sun is enough for plenty of crops. Leafy greens and many root vegetables actually prefer some shade.
+
+| Crop | Sun needed | Notes |
+| --- | --- | --- |
+| Lettuce | 3–4 h | Bolts slower in shade |
+| Spinach | 3–4 h | Sow early spring |
+| Radishes | 4 h | Ready in ~30 days |
+| Chard | 4 h | Cut-and-come-again |
+
+A simple sowing plan:
+
+\`\`\`text
+March:  spinach, radishes
+April:  lettuce, chard
+May:    succession-sow lettuce every 2 weeks
+\`\`\`
+
+Avoid fruiting crops (tomatoes, peppers, squash) — they need 6–8 hours.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders simple-text (defaults) 1`] = `
+"# Planning a vegetable garden
+
+*Created: 2026-05-14 09:12 UTC · Updated: 2026-05-14 09:13 UTC*
+
+## Human
+
+What vegetables grow well in partial shade? I have a north-facing bed that only gets about four hours of sun.
+
+## Claude
+
+Four hours of sun is enough for plenty of crops. Leafy greens and many root vegetables actually prefer some shade.
+
+| Crop | Sun needed | Notes |
+| --- | --- | --- |
+| Lettuce | 3–4 h | Bolts slower in shade |
+| Spinach | 3–4 h | Sow early spring |
+| Radishes | 4 h | Ready in ~30 days |
+| Chard | 4 h | Cut-and-come-again |
+
+A simple sowing plan:
+
+\`\`\`text
+March:  spinach, radishes
+April:  lettuce, chard
+May:    succession-sow lettuce every 2 weeks
+\`\`\`
+
+Avoid fruiting crops (tomatoes, peppers, squash) — they need 6–8 hours.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders simple-text (everything-on) 1`] = `
+"# Planning a vegetable garden
+
+*Created: 2026-05-14 09:12 UTC · Updated: 2026-05-14 09:13 UTC*
+
+## Human
+
+*2026-05-14 09:12 UTC*
+
+What vegetables grow well in partial shade? I have a north-facing bed that only gets about four hours of sun.
+
+## Claude
+
+*2026-05-14 09:12 UTC*
+
+Four hours of sun is enough for plenty of crops. Leafy greens and many root vegetables actually prefer some shade.
+
+| Crop | Sun needed | Notes |
+| --- | --- | --- |
+| Lettuce | 3–4 h | Bolts slower in shade |
+| Spinach | 3–4 h | Sow early spring |
+| Radishes | 4 h | Ready in ~30 days |
+| Chard | 4 h | Cut-and-come-again |
+
+A simple sowing plan:
+
+\`\`\`text
+March:  spinach, radishes
+April:  lettuce, chard
+May:    succession-sow lettuce every 2 weeks
+\`\`\`
+
+Avoid fruiting crops (tomatoes, peppers, squash) — they need 6–8 hours.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders thinking (branches-all) 1`] = `
+"# Estimating paint for a hallway
+
+*Created: 2026-05-20 18:44 UTC · Updated: 2026-05-20 18:47 UTC*
+
+## Human
+
+How many litres of paint do I need for a hallway 6 m long, 1.2 m wide, 2.4 m high, with three doors and one window? Two coats.
+
+## Claude
+
+You'll need about **4.8 litres**, so buy a 5 L can.
+
+- Net wall area: ≈ 28.8 m² (34.6 m² minus doors and window)
+- Two coats: ≈ 57.6 m²
+- At ~12 m² per litre: ≈ 4.8 L
+
+## Human
+
+And the ceiling?
+
+## Claude
+
+The ceiling is 7.2 m², so two coats need about **1.2 litres** — a 2.5 L can of ceiling paint covers it with plenty spare.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders thinking (defaults) 1`] = `
+"# Estimating paint for a hallway
+
+*Created: 2026-05-20 18:44 UTC · Updated: 2026-05-20 18:47 UTC*
+
+## Human
+
+How many litres of paint do I need for a hallway 6 m long, 1.2 m wide, 2.4 m high, with three doors and one window? Two coats.
+
+## Claude
+
+You'll need about **4.8 litres**, so buy a 5 L can.
+
+- Net wall area: ≈ 28.8 m² (34.6 m² minus doors and window)
+- Two coats: ≈ 57.6 m²
+- At ~12 m² per litre: ≈ 4.8 L
+
+## Human
+
+And the ceiling?
+
+## Claude
+
+The ceiling is 7.2 m², so two coats need about **1.2 litres** — a 2.5 L can of ceiling paint covers it with plenty spare.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders thinking (everything-on) 1`] = `
+"# Estimating paint for a hallway
+
+*Created: 2026-05-20 18:44 UTC · Updated: 2026-05-20 18:47 UTC*
+
+## Human
+
+*2026-05-20 18:44 UTC*
+
+How many litres of paint do I need for a hallway 6 m long, 1.2 m wide, 2.4 m high, with three doors and one window? Two coats.
+
+## Claude
+
+*2026-05-20 18:44 UTC*
+
+<details>
+<summary>Thinking</summary>
+
+- *Calculating wall area minus doors and window*
+- *Converting coverage into litres for two coats*
+
+Wall area: perimeter = 2 × (6 + 1.2) = 14.4 m. Wall area = 14.4 × 2.4 = 34.56 m².
+
+Subtract openings: three doors ≈ 3 × (0.76 × 2.0) = 4.56 m². One window ≈ 1.2 × 1.0 = 1.2 m². Net ≈ 28.8 m².
+
+Two coats → 57.6 m². Coverage ~12 m²/L → 4.8 L. Recommend 5 L can.
+
+</details>
+
+You'll need about **4.8 litres**, so buy a 5 L can.
+
+- Net wall area: ≈ 28.8 m² (34.6 m² minus doors and window)
+- Two coats: ≈ 57.6 m²
+- At ~12 m² per litre: ≈ 4.8 L
+
+## Human
+
+*2026-05-20 18:46 UTC*
+
+And the ceiling?
+
+## Claude
+
+*2026-05-20 18:46 UTC*
+
+<details>
+<summary>Thinking</summary>
+
+Ceiling area = 6 × 1.2 = 7.2 m². Two coats = 14.4 m². At 12 m²/L that is 1.2 L; a 2.5 L can is the smallest sensible size, or 1 L plus a tester.
+
+</details>
+
+The ceiling is 7.2 m², so two coats need about **1.2 litres** — a 2.5 L can of ceiling paint covers it with plenty spare.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders tool-use (branches-all) 1`] = `
+"# Ferry times and a currency check
+
+*Created: 2026-06-02 07:30 UTC · Updated: 2026-06-02 07:33 UTC*
+
+## Human
+
+When does the first ferry leave Portsmouth for Fishbourne on a weekday? And what's 100 GBP in EUR right now?
+
+## Claude
+
+The first weekday Wightlink sailing from Portsmouth to Fishbourne is at **06:00** (about 45 minutes crossing).
+
+I couldn't fetch a live exchange rate here — my code tool has no network access — but as of my knowledge, 100 GBP is roughly 115–120 EUR. Check your bank's rate for the exact figure.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders tool-use (defaults) 1`] = `
+"# Ferry times and a currency check
+
+*Created: 2026-06-02 07:30 UTC · Updated: 2026-06-02 07:33 UTC*
+
+## Human
+
+When does the first ferry leave Portsmouth for Fishbourne on a weekday? And what's 100 GBP in EUR right now?
+
+## Claude
+
+The first weekday Wightlink sailing from Portsmouth to Fishbourne is at **06:00** (about 45 minutes crossing).
+
+I couldn't fetch a live exchange rate here — my code tool has no network access — but as of my knowledge, 100 GBP is roughly 115–120 EUR. Check your bank's rate for the exact figure.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders tool-use (everything-on) 1`] = `
+"# Ferry times and a currency check
+
+*Created: 2026-06-02 07:30 UTC · Updated: 2026-06-02 07:33 UTC*
+
+## Human
+
+*2026-06-02 07:30 UTC*
+
+When does the first ferry leave Portsmouth for Fishbourne on a weekday? And what's 100 GBP in EUR right now?
+
+## Claude
+
+*2026-06-02 07:30 UTC*
+
+**Tool use: web\\_search**
+
+\`\`\`json
+{
+  "query": "first weekday ferry Portsmouth to Fishbourne timetable"
+}
+\`\`\`
+
+**Tool result: web\\_search**
+
+\`\`\`
+Result 1: Wightlink timetable — first weekday sailing Portsmouth (Gunwharf) to Fishbourne departs 06:00, crossing time 45 minutes.
+Result 2: Seasonal variations apply on bank holidays.
+\`\`\`
+
+**Tool use: repl**
+
+\`\`\`json
+{
+  "code": "const rate = await fetchRate('GBP', 'EUR');\\nconsole.log(100 * rate);"
+}
+\`\`\`
+
+**Tool result (error): repl**
+
+\`\`\`
+ReferenceError: fetchRate is not defined
+    at <anonymous>:1:20
+\`\`\`
+
+The first weekday Wightlink sailing from Portsmouth to Fishbourne is at **06:00** (about 45 minutes crossing).
+
+I couldn't fetch a live exchange rate here — my code tool has no network access — but as of my knowledge, 100 GBP is roughly 115–120 EUR. Check your bank's rate for the exact figure.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders unknown-block (branches-all) 1`] = `
+"# Conversation with a block type we do not know
+
+*Created: 2026-07-01 08:15 UTC · Updated: 2026-07-01 08:16 UTC*
+
+## Human
+
+Show me next Tuesday's weather.
+
+## Claude
+
+**Unsupported content (weather\\_card)**
+
+\`\`\`json
+{
+  "start_timestamp": "2026-07-01T08:15:57.551204Z",
+  "stop_timestamp": "2026-07-01T08:16:02.108475Z",
+  "type": "weather_card",
+  "location": "Portsmouth, UK",
+  "forecast": {
+    "day": "Tuesday",
+    "high_c": 22,
+    "low_c": 14,
+    "condition": "partly_cloudy"
+  }
+}
+\`\`\`
+
+Next Tuesday in Portsmouth looks partly cloudy with a high of 22°C and a low of 14°C — a decent day for the allotment.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders unknown-block (defaults) 1`] = `
+"# Conversation with a block type we do not know
+
+*Created: 2026-07-01 08:15 UTC · Updated: 2026-07-01 08:16 UTC*
+
+## Human
+
+Show me next Tuesday's weather.
+
+## Claude
+
+**Unsupported content (weather\\_card)**
+
+\`\`\`json
+{
+  "start_timestamp": "2026-07-01T08:15:57.551204Z",
+  "stop_timestamp": "2026-07-01T08:16:02.108475Z",
+  "type": "weather_card",
+  "location": "Portsmouth, UK",
+  "forecast": {
+    "day": "Tuesday",
+    "high_c": 22,
+    "low_c": 14,
+    "condition": "partly_cloudy"
+  }
+}
+\`\`\`
+
+Next Tuesday in Portsmouth looks partly cloudy with a high of 22°C and a low of 14°C — a decent day for the allotment.
+"
+`;
+
+exports[`serializeMarkdown fixture snapshots > renders unknown-block (everything-on) 1`] = `
+"# Conversation with a block type we do not know
+
+*Created: 2026-07-01 08:15 UTC · Updated: 2026-07-01 08:16 UTC*
+
+## Human
+
+*2026-07-01 08:15 UTC*
+
+Show me next Tuesday's weather.
+
+## Claude
+
+*2026-07-01 08:15 UTC*
+
+**Unsupported content (weather\\_card)**
+
+\`\`\`json
+{
+  "start_timestamp": "2026-07-01T08:15:57.551204Z",
+  "stop_timestamp": "2026-07-01T08:16:02.108475Z",
+  "type": "weather_card",
+  "location": "Portsmouth, UK",
+  "forecast": {
+    "day": "Tuesday",
+    "high_c": 22,
+    "low_c": 14,
+    "condition": "partly_cloudy"
+  }
+}
+\`\`\`
+
+Next Tuesday in Portsmouth looks partly cloudy with a high of 22°C and a low of 14°C — a decent day for the allotment.
+"
+`;
