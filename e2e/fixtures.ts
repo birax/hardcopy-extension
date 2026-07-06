@@ -103,6 +103,10 @@ export const test = base.extend<HardcopyFixtures>({
       channel: 'chromium', // full Chromium: the headless shell cannot load extensions
       headless: true,
       acceptDownloads: true,
+      // 1 for the E2E suite; the store-screenshot generator renders at 2×
+      // and downscales, so listing images come out supersampled and crisp
+      // (playwright.store.config.ts sets the variable).
+      deviceScaleFactor: Number(process.env.HARDCOPY_STORE_SCALE ?? '1'),
       args: [`--disable-extensions-except=${EXTENSION_PATH}`, `--load-extension=${EXTENSION_PATH}`],
     });
     // We create the context ourselves, so the runner's `trace` option cannot
