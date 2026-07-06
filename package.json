@@ -2,7 +2,7 @@
   "name": "hardcopy",
   "version": "0.0.1",
   "private": true,
-  "description": "Export your Claude conversations as Markdown, PDF, Word, RTF and plain text — fully in your browser.",
+  "description": "Export your Claude conversations as Markdown, PDF, Word, RTF and plain text \u2014 fully in your browser.",
   "type": "module",
   "license": "MIT",
   "repository": {
@@ -18,6 +18,7 @@
     "build": "wxt build",
     "build:firefox": "wxt build -b firefox",
     "build:edge": "wxt build -b edge",
+    "build:safari": "wxt build -b safari",
     "zip": "wxt zip",
     "zip:firefox": "wxt zip -b firefox",
     "zip:edge": "wxt zip -b edge",
