@@ -28,10 +28,23 @@ export type {
   ResolvedTimestamp,
 } from './prepare';
 
-export { buildExportFilename, DEFAULT_FILENAME_TEMPLATE } from './filename';
-export type { ExportFilenameInput } from './filename';
+export {
+  buildExportFilename,
+  DEFAULT_FILENAME_TEMPLATE,
+  FILENAME_TEMPLATE_PLACEHOLDERS,
+  isValidFilenameTemplate,
+  validateFilenameTemplate,
+} from './filename';
+export type { ExportFilenameInput, FilenameTemplateIssue } from './filename';
 
-export { EXPORT_OPTIONS_STORAGE_KEY, loadExportOptions, saveExportOptions } from './storage';
+export {
+  EXPORT_OPTIONS_STORAGE_KEY,
+  FILENAME_TEMPLATE_STORAGE_KEY,
+  loadExportOptions,
+  loadFilenameTemplate,
+  saveExportOptions,
+  saveFilenameTemplate,
+} from './storage';
 
 export { serializeConversation } from './serialize';
 export type { ExportPayload } from './serialize';

@@ -9,38 +9,15 @@
  */
 
 import { DEFAULT_EXPORT_OPTIONS, EXPORT_FORMAT_LIST, isExportFormat } from '../export/options';
-import type { ExportFormat, ExportOptions } from '../export/options';
+import type { ExportOptions } from '../export/options';
 import type { ExportFailure, ExportSuccess } from '../flow/export';
 import { t } from '../i18n';
-import type { MessageKey } from '../i18n';
 import { formatByteCount } from './format-bytes';
 import { DEFAULT_EXPORT_FORMAT } from './preferences';
 import type { PopupPreferences } from './preferences';
+import { FORMAT_LABEL_KEYS, INCLUDE_OPTIONS } from '../ui/option-labels';
 import { canExport, conversationTitleOf } from './state';
 import type { PopupState } from './state';
-
-/** Label key for each export format (labels ship in the i18n catalogue). */
-const FORMAT_LABEL_KEYS: Readonly<Record<ExportFormat, MessageKey>> = Object.freeze({
-  markdown: 'formatMarkdown',
-  text: 'formatText',
-  rtf: 'formatRtf',
-  docx: 'formatDocx',
-  pdf: 'formatPdf',
-});
-
-/** The boolean "Include" toggles, in display order, with their label keys. */
-const INCLUDE_OPTIONS: ReadonlyArray<{
-  option: Exclude<keyof ExportOptions, 'branches'>;
-  labelKey: MessageKey;
-}> = Object.freeze([
-  { option: 'includeThinking', labelKey: 'optionThinking' },
-  { option: 'includeToolUse', labelKey: 'optionToolUse' },
-  { option: 'includeToolResults', labelKey: 'optionToolResults' },
-  { option: 'includeArtifacts', labelKey: 'optionArtifacts' },
-  { option: 'includeAttachments', labelKey: 'optionAttachments' },
-  { option: 'includeTimestamps', labelKey: 'optionTimestamps' },
-  { option: 'includeConversationMetadata', labelKey: 'optionMetadata' },
-]);
 
 type BannerKind = 'info' | 'warn' | 'success' | 'error';
 

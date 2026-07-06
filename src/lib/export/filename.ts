@@ -16,6 +16,54 @@ import type { ExportFormat } from './options';
  */
 export const DEFAULT_FILENAME_TEMPLATE = '{title} - {date}.{ext}';
 
+/** The placeholder names a filename template may use. */
+export const FILENAME_TEMPLATE_PLACEHOLDERS: readonly string[] = Object.freeze([
+  'title',
+  'date',
+  'ext',
+]);
+
+/**
+ * Why a filename template is unusable:
+ *
+ * - `'empty'`               — nothing but whitespace.
+ * - `'unknown-placeholder'` — a `{...}` token that is not a supported
+ *                             placeholder; `placeholder` carries it verbatim
+ *                             (e.g. `'{foo}'`) for the error message.
+ * - `'unbalanced-braces'`   — a stray `{` or `}` outside any placeholder.
+ */
+export type FilenameTemplateIssue =
+  | { kind: 'empty' }
+  | { kind: 'unknown-placeholder'; placeholder: string }
+  | { kind: 'unbalanced-braces' };
+
+/**
+ * Validate a filename template: only `{title}`, `{date}` and `{ext}` are
+ * allowed as placeholders, and braces must pair up. Returns the first issue
+ * found, or `null` for a usable template. (Filesystem safety is not checked
+ * here — {@link buildExportFilename} sanitizes whatever the template renders.)
+ */
+export function validateFilenameTemplate(template: string): FilenameTemplateIssue | null {
+  if (template.trim() === '') {
+    return { kind: 'empty' };
+  }
+  for (const match of template.matchAll(/\{([^{}]*)\}/g)) {
+    const name = match[1] ?? '';
+    if (!FILENAME_TEMPLATE_PLACEHOLDERS.includes(name)) {
+      return { kind: 'unknown-placeholder', placeholder: `{${name}}` };
+    }
+  }
+  if (/[{}]/.test(template.replace(/\{[^{}]*\}/g, ''))) {
+    return { kind: 'unbalanced-braces' };
+  }
+  return null;
+}
+
+/** True when {@link validateFilenameTemplate} finds nothing wrong. */
+export function isValidFilenameTemplate(template: string): boolean {
+  return validateFilenameTemplate(template) === null;
+}
+
 /** Input to {@link buildExportFilename}. */
 export interface ExportFilenameInput {
   /**

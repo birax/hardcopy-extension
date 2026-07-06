@@ -9,9 +9,11 @@ import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { fakeBrowser } from 'wxt/testing';
 
 import { EXPORT_FORMAT_LIST } from '../src/lib/export/options';
+import { saveFilenameTemplate } from '../src/lib/export/storage';
 import { serializeConversation } from '../src/lib/export/serialize';
 import { EXPORT_FAILURE_MESSAGES, runExport } from '../src/lib/flow/export';
 import type { ExportFlowDeps } from '../src/lib/flow/export';
@@ -285,6 +287,43 @@ describe('runExport happy path', () => {
     expect(outcome).toMatchObject({
       ok: true,
       filename: 'Planning a vegetable garden - 2026-07-06.txt',
+    });
+  });
+});
+
+describe('runExport filename template (issue #15)', () => {
+  beforeEach(() => {
+    fakeBrowser.reset();
+  });
+
+  it('names the download from the template stored by the options page', async () => {
+    await saveFilenameTemplate('{date} {title}.{ext}');
+    const { deps, downloads } = makeDeps();
+    const outcome = await runExport({ format: 'markdown' }, deps);
+    expect(outcome).toMatchObject({
+      ok: true,
+      filename: '2026-05-14 Planning a vegetable garden.md',
+    });
+    expect(downloads[0]?.filename).toBe('2026-05-14 Planning a vegetable garden.md');
+  });
+
+  it('uses an injected template loader when provided', async () => {
+    const { deps } = makeDeps({ loadFilenameTemplate: async () => '{title}.{ext}' });
+    await expect(runExport({ format: 'pdf' }, deps)).resolves.toMatchObject({
+      ok: true,
+      filename: 'Planning a vegetable garden.pdf',
+    });
+  });
+
+  it('degrades to the default template when the loader fails', async () => {
+    const { deps } = makeDeps({
+      loadFilenameTemplate: async () => {
+        throw new Error('storage unavailable');
+      },
+    });
+    await expect(runExport({ format: 'markdown' }, deps)).resolves.toMatchObject({
+      ok: true,
+      filename: 'Planning a vegetable garden - 2026-05-14.md',
     });
   });
 });

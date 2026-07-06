@@ -31,16 +31,12 @@
  * "report this" GitHub issue.
  */
 
-import {
-  ApiError,
-  fetchConversation,
-  getCurrentConversationId,
-  resolveOrgId,
-} from '../api';
+import { ApiError, fetchConversation, getCurrentConversationId, resolveOrgId } from '../api';
 import { extractConversationFromDom } from '../dom-fallback';
-import { buildExportFilename } from '../export/filename';
+import { buildExportFilename, DEFAULT_FILENAME_TEMPLATE } from '../export/filename';
 import type { ExportFormat, ExportOptions } from '../export/options';
 import { prepareConversation } from '../export/prepare';
+import { loadFilenameTemplate } from '../export/storage';
 import type { Conversation } from '../model';
 import { parseConversation } from '../parser';
 import { triggerDownload } from './download';
@@ -139,6 +135,12 @@ export interface ExportFlowDeps {
   serialize?: SerializeFn;
   /** Clock for the filename's date fallback; defaults to `new Date()`. */
   now?: () => Date;
+  /**
+   * Loader for the user's filename template (set on the options page);
+   * defaults to {@link loadFilenameTemplate}, which reads `storage.local`
+   * and falls back to the default template for anything unusable.
+   */
+  loadFilenameTemplate?: () => Promise<string>;
 }
 
 /** Ready-to-display failure messages, each with a concrete next step. */
@@ -233,15 +235,26 @@ async function finishExport(
   context: { warnings: string[]; degraded?: boolean },
 ): Promise<ExportOutcome> {
   const serialize: SerializeFn =
-    deps.serialize ?? (async (prepared, format) => (await loadPackagedSerializer())(prepared, format));
+    deps.serialize ??
+    (async (prepared, format) => (await loadPackagedSerializer())(prepared, format));
   const download = deps.download ?? triggerDownload;
   const now = deps.now ?? ((): Date => new Date());
+
+  // The user's filename template (options page). A storage failure must not
+  // fail an otherwise-good export, so it degrades to the default template.
+  let template = DEFAULT_FILENAME_TEMPLATE;
+  try {
+    template = await (deps.loadFilenameTemplate ?? loadFilenameTemplate)();
+  } catch {
+    // storage unavailable — keep the default template.
+  }
 
   const prepared = prepareConversation(conversation, request.options);
   const filename = buildExportFilename({
     title: prepared.title,
     date: conversation.createdAt ?? now(),
     format: request.format,
+    template,
   });
 
   try {

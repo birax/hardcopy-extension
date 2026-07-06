@@ -6,6 +6,7 @@
 
 import { browser } from 'wxt/browser';
 
+import { DEFAULT_FILENAME_TEMPLATE, isValidFilenameTemplate } from './filename';
 import { DEFAULT_EXPORT_OPTIONS } from './options';
 import type { ExportOptions } from './options';
 
@@ -37,6 +38,26 @@ export async function loadExportOptions(): Promise<ExportOptions> {
 /** Persist export options to `storage.local` for future sessions. */
 export async function saveExportOptions(options: ExportOptions): Promise<void> {
   await browser.storage.local.set({ [EXPORT_OPTIONS_STORAGE_KEY]: options });
+}
+
+/** The `storage.local` key the filename template is stored under. */
+export const FILENAME_TEMPLATE_STORAGE_KEY = 'filenameTemplate';
+
+/**
+ * Load the persisted filename template. Missing, non-string, or invalid
+ * values (per {@link isValidFilenameTemplate}) fall back to
+ * {@link DEFAULT_FILENAME_TEMPLATE}, so a bad stored value can never break
+ * an export.
+ */
+export async function loadFilenameTemplate(): Promise<string> {
+  const stored = await browser.storage.local.get(FILENAME_TEMPLATE_STORAGE_KEY);
+  const raw: unknown = stored[FILENAME_TEMPLATE_STORAGE_KEY];
+  return typeof raw === 'string' && isValidFilenameTemplate(raw) ? raw : DEFAULT_FILENAME_TEMPLATE;
+}
+
+/** Persist the filename template to `storage.local` for future exports. */
+export async function saveFilenameTemplate(template: string): Promise<void> {
+  await browser.storage.local.set({ [FILENAME_TEMPLATE_STORAGE_KEY]: template });
 }
 
 /** Validate a stored value field-by-field, defaulting anything unusable. */

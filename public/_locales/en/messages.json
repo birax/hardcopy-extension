@@ -162,5 +162,89 @@
   "disclaimer": {
     "message": "Hardcopy is an independent open-source project, not affiliated with, endorsed by, or sponsored by Anthropic. Claude is a trademark of Anthropic, PBC.",
     "description": "Non-affiliation disclaimer (ADR 0004). Translate the sentence but keep its meaning exact; 'Hardcopy', 'Anthropic', 'Claude' and 'Anthropic, PBC' are proper names."
+  },
+  "optionsTitle": {
+    "message": "Hardcopy settings",
+    "description": "Heading and document title of the options page."
+  },
+  "optionsIntro": {
+    "message": "These settings are shared with the popup — changes here apply the next time you open it, and changes made in the popup show up here.",
+    "description": "Introductory sentence at the top of the options page."
+  },
+  "optionsFormatLegend": {
+    "message": "Default format",
+    "description": "Legend of the default-format radio group on the options page."
+  },
+  "filenameLegend": {
+    "message": "Filename",
+    "description": "Legend of the filename-template section on the options page."
+  },
+  "filenameTemplateLabel": {
+    "message": "Template",
+    "description": "Label of the filename template text input."
+  },
+  "filenameTemplateHelp": {
+    "message": "Placeholders: {title} is the conversation title, {date} is the date (YYYY-MM-DD), {ext} is the file extension.",
+    "description": "Helper text under the filename template input. Keep the literal placeholders {title}, {date} and {ext} untranslated."
+  },
+  "filenamePreviewLabel": {
+    "message": "Preview",
+    "description": "Label preceding the live filename preview."
+  },
+  "filenamePreviewSampleTitle": {
+    "message": "Birthday cake ideas",
+    "description": "Example conversation title used in the filename preview."
+  },
+  "filenameTemplateErrorEmpty": {
+    "message": "Enter a template — for example {title} - {date}.{ext}.",
+    "description": "Validation message when the filename template is empty. Keep the literal placeholders untranslated."
+  },
+  "filenameTemplateErrorUnknownPlaceholder": {
+    "message": "$1 is not a placeholder Hardcopy knows. Use {title}, {date} or {ext}.",
+    "description": "Validation message for an unknown placeholder in the filename template. $1 is the offending placeholder, e.g. {foo}. Keep the literal placeholders untranslated."
+  },
+  "filenameTemplateErrorUnbalanced": {
+    "message": "Braces must come in matched pairs — use {title}, {date} or {ext}.",
+    "description": "Validation message when the filename template has a stray { or }. Keep the literal placeholders untranslated."
+  },
+  "filenameResetButton": {
+    "message": "Reset to default",
+    "description": "Button that restores the default filename template."
+  },
+  "savedIndicator": {
+    "message": "Saved",
+    "description": "Brief indicator (and screen-reader announcement) after a settings change is persisted."
+  },
+  "resetHeading": {
+    "message": "Reset",
+    "description": "Heading of the reset section on the options page."
+  },
+  "resetAllButton": {
+    "message": "Reset all settings",
+    "description": "Button that resets every Hardcopy setting to its default."
+  },
+  "resetAllConfirm": {
+    "message": "Reset all Hardcopy settings to their defaults?",
+    "description": "Confirmation prompt before resetting all settings."
+  },
+  "resetAllDone": {
+    "message": "Settings reset to their defaults",
+    "description": "Indicator and announcement after all settings were reset."
+  },
+  "aboutHeading": {
+    "message": "About",
+    "description": "Heading of the about section on the options page."
+  },
+  "aboutVersion": {
+    "message": "Version $1",
+    "description": "Version line in the about section. $1 is the extension version."
+  },
+  "aboutRepoLink": {
+    "message": "Source code on GitHub",
+    "description": "Link to the Hardcopy repository."
+  },
+  "aboutPrivacyLink": {
+    "message": "Privacy policy",
+    "description": "Link to Hardcopy's privacy policy on GitHub."
   }
 }

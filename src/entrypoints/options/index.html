@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Full-tab settings page (issue #15); WXT reads this into
+         options_ui.open_in_tab in the manifest. -->
+    <meta name="manifest.open_in_tab" content="true" />
+    <!-- The visible UI is rendered by main.ts so every string flows through
+         the i18n layer (issue #18); this shell stays intentionally empty.
+         main.ts replaces the title with the localized one. -->
+    <title>Hardcopy settings</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

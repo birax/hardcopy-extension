@@ -5,6 +5,9 @@ import {
   DEFAULT_CONVERSATION_TITLE,
   DEFAULT_FILENAME_TEMPLATE,
   EXPORT_FORMATS,
+  FILENAME_TEMPLATE_PLACEHOLDERS,
+  isValidFilenameTemplate,
+  validateFilenameTemplate,
 } from '../src/lib/export';
 import type { ExportFormat } from '../src/lib/export';
 import { MAX_BASENAME_LENGTH } from '../src/lib/filename';
@@ -110,5 +113,59 @@ describe('buildExportFilename', () => {
     expect(
       buildExportFilename({ title: 'Notes', date: DATE, format: 'markdown', template: '.{ext}' }),
     ).toBe('conversation.md');
+  });
+});
+
+describe('validateFilenameTemplate', () => {
+  it('accepts the default template and every placeholder', () => {
+    expect(validateFilenameTemplate(DEFAULT_FILENAME_TEMPLATE)).toBeNull();
+    expect(FILENAME_TEMPLATE_PLACEHOLDERS).toEqual(['title', 'date', 'ext']);
+    for (const placeholder of FILENAME_TEMPLATE_PLACEHOLDERS) {
+      expect(validateFilenameTemplate(`{${placeholder}}`)).toBeNull();
+    }
+  });
+
+  it('accepts templates without placeholders and with repeated ones', () => {
+    expect(validateFilenameTemplate('claude export')).toBeNull();
+    expect(validateFilenameTemplate('{date} {date} {title}.{ext}')).toBeNull();
+  });
+
+  it('rejects empty and whitespace-only templates', () => {
+    expect(validateFilenameTemplate('')).toEqual({ kind: 'empty' });
+    expect(validateFilenameTemplate('   ')).toEqual({ kind: 'empty' });
+  });
+
+  it('rejects unknown placeholders and names the offender', () => {
+    expect(validateFilenameTemplate('{title} - {foo}.{ext}')).toEqual({
+      kind: 'unknown-placeholder',
+      placeholder: '{foo}',
+    });
+    // Placeholders are case-sensitive, like the renderer.
+    expect(validateFilenameTemplate('{Title}')).toEqual({
+      kind: 'unknown-placeholder',
+      placeholder: '{Title}',
+    });
+    expect(validateFilenameTemplate('{}')).toEqual({
+      kind: 'unknown-placeholder',
+      placeholder: '{}',
+    });
+  });
+
+  it('rejects stray braces outside any placeholder', () => {
+    expect(validateFilenameTemplate('{title')).toEqual({ kind: 'unbalanced-braces' });
+    expect(validateFilenameTemplate('title}')).toEqual({ kind: 'unbalanced-braces' });
+    expect(validateFilenameTemplate('{title}}')).toEqual({ kind: 'unbalanced-braces' });
+  });
+
+  it('reports the unknown placeholder before a later stray brace', () => {
+    expect(validateFilenameTemplate('{nope} {')).toEqual({
+      kind: 'unknown-placeholder',
+      placeholder: '{nope}',
+    });
+  });
+
+  it('isValidFilenameTemplate mirrors the validator', () => {
+    expect(isValidFilenameTemplate(DEFAULT_FILENAME_TEMPLATE)).toBe(true);
+    expect(isValidFilenameTemplate('{oops}')).toBe(false);
   });
 });
