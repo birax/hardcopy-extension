@@ -224,6 +224,7 @@ describe('serializeText edge cases', () => {
             [
               { kind: 'image', mediaType: undefined, fileName: undefined, data: undefined },
               { kind: 'image', mediaType: 'image/png', fileName: undefined, data: undefined },
+              { kind: 'image', mediaType: 'image/jpeg', fileName: 'holiday.jpg', data: undefined },
               { kind: 'file', fileName: 'notes.bin', fileKind: undefined },
               {
                 kind: 'attachment',
@@ -251,6 +252,7 @@ describe('serializeText edge cases', () => {
     expect(output).toContain('Claude · 2026-01-01 00:00 UTC');
     expect(output).toContain('\n[Image]\n');
     expect(output).toContain('[Image (image/png)]');
+    expect(output).toContain('[Image: holiday.jpg]');
     expect(output).toContain('[File: notes.bin]');
     expect(output).toContain('[Attachment: empty.txt]');
     expect(output).toContain('[Tool result]');
