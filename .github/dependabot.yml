@@ -1,0 +1,31 @@
+# Dependabot configuration (2026-07-06 security review, issue #25).
+#
+# Weekly update PRs for npm packages and GitHub Actions. Minor and patch
+# bumps are grouped into a single PR per ecosystem to keep review load low;
+# major bumps and security updates arrive as individual PRs. Every bump
+# still goes through the full CI gate (typecheck, lint, tests, builds,
+# dependency audit) and a lockfile-diff review before merge — see
+# docs/security/threat-model.md, T4 (supply chain).
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch

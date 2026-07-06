@@ -56,7 +56,7 @@ A malicious or hijacked npm dependency ships inside the extension with full exte
 
 A future change adds host permissions, `tabs`, `cookies`, `scripting`, `<all_urls>`, or other capabilities, expanding the attack surface and invalidating privacy claims.
 
-**Mitigations:** `host_permissions: ["https://claude.ai/*"]` plus `storage` and `downloads` is an **invariant**, not a default. Manifest/`wxt.config.ts` changes require explicit scrutiny; PRs adding permissions should be rejected absent an ADR that consciously revises this threat model and the privacy policy.
+**Mitigations:** `host_permissions: ["https://claude.ai/*"]` plus `storage` is an **invariant**, not a default. (`downloads` was removed in the 2026-07-06 security review — the export saves via an in-page blob + anchor click, which needs no extension API.) Manifest/`wxt.config.ts` changes require explicit scrutiny; PRs adding permissions should be rejected absent an ADR that consciously revises this threat model and the privacy policy.
 
 ### T6 — Session misuse via the claude.ai API
 
@@ -74,12 +74,12 @@ A hostile actor publishes a lookalike "Hardcopy" (or "Claude exporter") that *do
 
 Future PRs must NOT violate any of these. If a change requires breaking one, it needs a new ADR plus updates to this document, `SECURITY.md`, `PRIVACY.md`, and every store listing — not a quiet diff.
 
-- [ ] **No new permissions**: host permissions remain exactly `https://claude.ai/*`; API permissions remain exactly `storage` + `downloads`.
+- [ ] **No new permissions**: host permissions remain exactly `https://claude.ai/*`; API permissions remain exactly `storage`.
 - [ ] **No network contact with any host other than claude.ai** — no analytics, telemetry, error reporting, or third-party services.
 - [ ] **No remote code**: no CDN scripts, remote fonts, `eval`/`new Function`, or dynamically fetched code; everything bundled at build time.
 - [ ] **No loosened CSP**: default MV3 `script-src 'self'` stands; no `unsafe-inline`/`unsafe-eval`.
 - [ ] **Serializers escape untrusted content**: every path that interpolates conversation-derived strings into an output format escapes per T1; adversarial fixtures cover it.
 - [ ] **No `innerHTML` (or equivalent) with conversation-derived strings** in any extension UI.
-- [ ] **No cookie access**: authentication stays implicit via `credentials: 'include'`; the extension never reads or stores credentials.
+- [ ] **No credential access**: authentication stays implicit via `credentials: 'include'`; the extension never reads or stores session cookies or any other credential. (Sole sanctioned exception: reading the non-credential `lastActiveOrg` cookie hint from `document.cookie` to pick the export organization — never persisted, never transmitted anywhere but back to claude.ai as a URL path segment.)
 - [ ] **Read-only against claude.ai**: no state-changing requests to the API.
 - [ ] **Lockfile pinned and honored**: dependency changes are deliberate, reviewed, and pass the CI audit.

@@ -7,6 +7,50 @@ on:
     branches: [main]
 
 jobs:
+  dependency-audit:
+    name: Dependency audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      # Gate on HIGH+ advisories in production dependencies only — those are
+      # the packages that ship inside the extension bundle (threat model T4).
+      # Dev-dependency advisories (build tooling) don't ship and are handled
+      # via Dependabot updates rather than blocking every CI run.
+      #
+      # Override process: if a high-severity advisory has no patched release
+      # and demonstrably doesn't affect us, don't weaken this step — add the
+      # GHSA id under `auditConfig.ignoreGhsas` in pnpm-workspace.yaml (with a
+      # comment linking the advisory and rationale) in a reviewed PR, and open
+      # an `area:security` issue to remove the exception once a fix ships.
+      - name: Audit production dependencies (fail on high+)
+        run: pnpm audit --prod --audit-level high
+
+  # Blocks PRs that introduce dependencies with known vulnerabilities or
+  # disallowed licenses (GPL-family is incompatible with shipping in an
+  # MIT-licensed bundled artifact). PR-only: the action diffs base..head.
+  dependency-review:
+    name: Dependency review (PRs)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/dependency-review-action@v4
+        with:
+          fail-on-severity: high
+          license-check: true
+          allow-licenses: MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause, ISC, 0BSD, Unlicense, CC0-1.0, OFL-1.1
+
   checks:
     name: Typecheck, lint, test
     runs-on: ubuntu-latest

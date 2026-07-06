@@ -27,14 +27,14 @@ Please give us a reasonable window to fix an accepted issue before public disclo
 
 Some context that helps target reports well:
 
-- **Hardcopy never handles credentials.** The extension has no accounts, secrets, or tokens of its own. It relies entirely on the browser's existing claude.ai session: requests are made with `credentials: 'include'` and the browser attaches session cookies automatically. The extension **never reads, stores, or transmits cookies or any other credential** — it has no `cookies` permission.
+- **Hardcopy never handles credentials.** The extension has no accounts, secrets, or tokens of its own. It relies entirely on the browser's existing claude.ai session: requests are made with `credentials: 'include'` and the browser attaches session cookies automatically. The extension **never reads, stores, or transmits session cookies or any other credential** — it has no `cookies` permission. (The one cookie value it reads is the non-credential `lastActiveOrg` preference, via `document.cookie` in the content script, used only to pick the right organization for the export; it is never stored or transmitted.)
 - **All processing is local.** There is no server component. The only network host the extension can contact is `https://claude.ai/*` (its sole host permission). Anything that would cause the extension to contact another host, execute remote code, or exfiltrate conversation content is a serious vulnerability — please report it.
 - **Injection into exports is in scope.** Conversation content is untrusted input. A crafted conversation that produces a malicious export file (e.g. via RTF control words, Markdown/HTML injection, or PDF string escapes) or that achieves script execution in the extension's UI is exactly the kind of bug we want to hear about. See the [threat model](docs/security/threat-model.md).
 - **Out of scope:** vulnerabilities in claude.ai itself (report those to [Anthropic](https://www.anthropic.com/responsible-disclosure-policy)), issues requiring an already-compromised browser or machine, and what users do with exported files after they are saved.
 
 ## Permissions rationale
 
-The extension requests only `host_permissions: ["https://claude.ai/*"]`, `storage` (export preferences), and `downloads` (saving export files). These are security invariants — see the [threat model](docs/security/threat-model.md) for the full list, including no remote code and the default MV3 content security policy.
+The extension requests only `host_permissions: ["https://claude.ai/*"]` and `storage` (export preferences). Exports are saved via an in-page blob-and-anchor download, so not even the `downloads` permission is needed (it was removed in the 2026-07-06 pre-release security review). These are security invariants — see the [threat model](docs/security/threat-model.md) for the full list, including no remote code and the default MV3 content security policy.
 
 ## Further reading
 

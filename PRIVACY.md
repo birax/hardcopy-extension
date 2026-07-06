@@ -50,9 +50,8 @@ Hardcopy requests the minimum permissions that make the extension work:
 | --- | --- |
 | Access to `https://claude.ai/*` | To run on claude.ai pages and fetch your conversation from claude.ai so it can be exported. Hardcopy cannot run on, or talk to, any other site. |
 | `storage` | To remember your export preferences on your device. |
-| `downloads` | To save the exported file to your device. |
 
-No other permissions are requested — no access to your browsing history, other tabs, or other websites.
+No other permissions are requested — no access to your browsing history, other tabs, downloads, or other websites. Saving the export file uses the browser's ordinary download mechanism for a locally generated file, which needs no extension permission at all.
 
 ## Open source and verifiable
 

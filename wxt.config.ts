@@ -17,11 +17,12 @@ export default defineConfig({
     description: '__MSG_extDescription__',
     default_locale: 'en',
     host_permissions: ['https://claude.ai/*'],
-    // NOTE: the export flow downloads via an in-page blob + anchor click
-    // (src/lib/flow/download.ts), so `downloads` is currently unused by it.
-    // If that approach holds through store review, `downloads` can be dropped
-    // here for a smaller permission prompt.
-    permissions: ['storage', 'downloads'],
+    // `storage` only. The export flow saves files via an in-page blob +
+    // anchor click (src/lib/flow/download.ts), which needs no extension API,
+    // so the `downloads` permission was dropped in the 2026-07-06 security
+    // review (issue #25). Adding any permission here is a threat-model
+    // invariant change — see docs/security/threat-model.md (T5).
+    permissions: ['storage'],
     // The lazily-loaded serializer bundle (see the hooks below) is imported
     // by the content script at export time via
     // `import(browser.runtime.getURL('/serializers/serialize.js'))`; Chrome

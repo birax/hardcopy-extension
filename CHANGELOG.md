@@ -33,5 +33,15 @@ Release mechanics (how entries here become GitHub Releases) are documented in
 - Tag-driven release automation: gates, store zips (including the AMO
   sources zip), SHA-256 checksums, and GitHub Releases with notes pulled
   from this changelog (#26).
+- Pre-release security review: audit report under `docs/security/`, a CI
+  dependency-audit gate (`pnpm audit --prod --audit-level high` plus
+  GitHub's dependency-review action on PRs), and weekly grouped Dependabot
+  updates for npm and GitHub Actions (#25).
+
+### Removed
+
+- The unused `downloads` permission — exports save via an in-page blob +
+  anchor download that needs no extension API, so the permission set is now
+  just `https://claude.ai/*` + `storage` (#25).
 
 [Unreleased]: https://github.com/birax/hardcopy-extension/commits/main

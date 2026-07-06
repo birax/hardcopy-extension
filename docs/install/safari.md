@@ -106,10 +106,12 @@ Then run the app again from Xcode (**⌘R**) and reload any open claude.ai tabs.
 - **The Hardcopy checkbox is greyed out / extension stopped working after reopening
   Safari** — unsigned-extension permission resets when Safari quits; redo
   Develop → Allow Unsigned Extensions.
-- **Converter warning about `downloads`** — when regenerating the wrapper you may see
-  a warning that the `downloads` manifest permission isn't supported by Safari. It's
-  harmless: Hardcopy delivers exports through a normal in-page download, not the
-  `downloads` API.
+- **Converter warning about `downloads`** — older builds requested the `downloads`
+  manifest permission, which the converter warned is unsupported by Safari. The
+  permission was removed in the 2026-07-06 security review (Hardcopy delivers
+  exports through a normal in-page download, not the `downloads` API), so a
+  current build should produce no such warning; if you see one, rebuild the
+  wrapper from a fresh `pnpm build:safari`.
 
 For everything else, see the [shared troubleshooting section](README.md#troubleshooting).
 

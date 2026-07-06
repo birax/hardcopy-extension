@@ -14,11 +14,10 @@
  *   any extension permission.
  *
  * NOTE for manifest review: because this path needs no extension API at all,
- * the `downloads` permission in wxt.config.ts is currently unused by the
- * export flow. If this in-page approach holds through store review and the
- * background never grows a download path, `downloads` can be dropped from the
- * manifest (smaller permission prompt). Deliberately not changed here — the
- * manifest is owned by wxt.config.ts and should be trimmed as its own change.
+ * the `downloads` permission was removed from wxt.config.ts in the
+ * 2026-07-06 security review (issue #25). If a `browser.downloads.download`
+ * path is ever reintroduced, the permission must be added back alongside a
+ * threat-model / privacy-policy revision (docs/security/threat-model.md, T5).
  */
 
 /** Everything needed to trigger one download. */

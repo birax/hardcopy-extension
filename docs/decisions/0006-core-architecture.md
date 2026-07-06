@@ -19,7 +19,7 @@ We need one codebase producing Manifest V3 extensions for Chrome, Firefox, Edge,
    - PDF: **`pdf-lib`** (MIT) with bundled Unicode font subsets (including monospace for code) — stores forbid remote fonts anyway.
 5. **Testing:** Vitest with WXT's `WxtVitest` plugin + `@webext-core/fake-browser` for units; **fixture-based parser/serializer tests** on sanitized recorded conversation JSON as the backbone; Playwright E2E on Chromium against a **mocked claude.ai** (routes serving fixtures, never real accounts); `web-ext lint`/run smoke for Firefox.
 6. **CI: GitHub Actions** — lint/typecheck → tests + coverage → build/zip matrix for chrome/firefox/edge (ubuntu) → Playwright E2E → Safari converter + `xcodebuild` job on `macos-latest`.
-7. **Permissions:** `host_permissions: ["https://claude.ai/*"]` plus `storage` and `downloads` only. No remote code, default MV3 CSP.
+7. **Permissions:** `host_permissions: ["https://claude.ai/*"]` plus `storage` and `downloads` only. No remote code, default MV3 CSP. *(Amended 2026-07-06, issue #25: `downloads` dropped — the export saves via an in-page blob + anchor click, so the permission was unused. The invariant is now `https://claude.ai/*` + `storage`; see the [threat model](../security/threat-model.md) and the [security review](../security/2026-07-06-security-review.md).)*
 
 ## Consequences
 

@@ -14,7 +14,7 @@ https://github.com/birax/hardcopy-extension/blob/main/PRIVACY.md
 - **Permission justifications:**
   - `https://claude.ai/*` — "Required to run on claude.ai and fetch the user's own conversation from claude.ai (using their existing session) so it can be exported. The extension contacts no other host."
   - `storage` — "Stores the user's export preferences (format, metadata options) locally."
-  - `downloads` — "Saves the generated export file to the user's device."
+  - (No other permissions: the export file is saved via the browser's ordinary in-page download of a locally generated file, so the `downloads` permission is not requested.)
 - **Remote code:** No.
 
 ## Firefox Add-ons (AMO) — data collection disclosure
