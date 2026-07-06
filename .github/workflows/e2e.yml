@@ -1,0 +1,52 @@
+# Playwright E2E suite (issue #31): the built chrome-mv3 extension in a real
+# Chromium against a fully mocked claude.ai. Kept out of ci.yml so the fast
+# unit/build pipeline and this browser job evolve independently.
+name: E2E
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  e2e:
+    name: Playwright E2E (Chromium)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build the extension
+        run: pnpm build
+
+      - name: Install Playwright Chromium
+        run: pnpm exec playwright install chromium --with-deps
+
+      # Runs headless: Playwright's `channel: 'chromium'` uses the new
+      # headless mode, which supports --load-extension (no xvfb needed).
+      - name: Run E2E tests
+        run: pnpm test:e2e
+        env:
+          # The build already happened above; don't rebuild in global setup.
+          HARDCOPY_E2E_SKIP_BUILD: '1'
+
+      - name: Upload traces and report on failure
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-artifacts
+          path: |
+            test-results/
+            playwright-report/
+          if-no-files-found: ignore
+          retention-days: 7

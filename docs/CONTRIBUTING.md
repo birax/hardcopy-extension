@@ -31,9 +31,36 @@ pnpm install   # also runs `wxt prepare`, generating .wxt/ (types, tsconfig)
 | `pnpm format` | Prettier, writes in place |
 | `pnpm test` | Vitest unit tests |
 | `pnpm test:coverage` | Vitest with V8 coverage |
+| `pnpm test:e2e` | Playwright end-to-end tests (real Chromium, mocked claude.ai) |
 
 CI (`.github/workflows/ci.yml`) runs typecheck → lint → tests with coverage, then builds and
-zips for chrome/firefox/edge. All of it must be green before merging.
+zips for chrome/firefox/edge; `.github/workflows/e2e.yml` runs the Playwright suite. All of it
+must be green before merging.
+
+## End-to-end tests
+
+`pnpm test:e2e` runs the Playwright suite in `e2e/`: it loads the built `.output/chrome-mv3/`
+extension into a real (headless) Chromium and drives the popup → probe → export → download flow
+against a fully mocked claude.ai — Playwright routes serve the JSON payloads from
+`tests/fixtures/`, and no request ever leaves the machine.
+
+First-time setup (downloads the Playwright-bundled Chromium; branded Chrome cannot side-load
+extensions):
+
+```sh
+pnpm exec playwright install chromium
+```
+
+Then just:
+
+```sh
+pnpm test:e2e   # builds the extension itself (set HARDCOPY_E2E_SKIP_BUILD=1 to reuse .output/)
+```
+
+On failure, a Playwright trace is kept under `test-results/` — inspect it with
+`pnpm exec playwright show-trace <path-to-trace.zip>`. The specs live in `e2e/*.e2e.ts` (that
+suffix keeps them out of Vitest's default include); shared fixtures — the extension-loading
+recipe and the claude.ai mock — live in `e2e/fixtures.ts`.
 
 ## Loading the unpacked extension
 
