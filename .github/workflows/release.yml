@@ -1,0 +1,144 @@
+name: Release
+
+# Tag-driven releases (see docs/RELEASING.md). Pushing a tag like v1.2.3 runs
+# the full gates, builds store zips for chrome/firefox/edge (plus the AMO
+# sources zip), generates SHA-256 checksums, and publishes a GitHub Release
+# whose body is the matching CHANGELOG.md section.
+#
+# Two guards fail the job loudly before anything is published:
+#   1. The tag version must equal the version in package.json (the single
+#      source of truth — WXT derives the manifest version from it).
+#   2. CHANGELOG.md must contain a `## [X.Y.Z]` section for the tag. No
+#      changelog entry, no release.
+#
+# workflow_dispatch exists as a smoke test: it runs the gates and the build
+# steps but never creates a release (releases require a tag ref, and the
+# dry_run input additionally skips the release step even on a tag ref).
+on:
+  push:
+    tags: ['v*.*.*']
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run: build and zip everything, but skip creating the GitHub Release'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write # create the GitHub Release and upload assets
+
+jobs:
+  checks:
+    name: Typecheck, lint, test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Test
+        run: pnpm test
+
+  release:
+    name: Build, zip, publish release
+    needs: checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Guard 1: the tag must match package.json — the version is
+      # single-sourced there (WXT stamps it into every manifest).
+      - name: Verify tag matches package.json version
+        if: github.ref_type == 'tag'
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          PKG_VERSION="$(node -p 'require("./package.json").version')"
+          if [ "$TAG_VERSION" != "$PKG_VERSION" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match package.json version $PKG_VERSION. Bump package.json (see docs/RELEASING.md) and re-tag."
+            exit 1
+          fi
+          echo "Tag $GITHUB_REF_NAME matches package.json ($PKG_VERSION)."
+
+      # Guard 2: extract the release notes from CHANGELOG.md. A tag with no
+      # `## [X.Y.Z]` changelog section fails here, deliberately — every
+      # release must ship human-written notes (see docs/RELEASING.md).
+      - name: Extract changelog section for release notes
+        if: github.ref_type == 'tag'
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          if ! grep -q "^## \[$VERSION\]" CHANGELOG.md; then
+            echo "::error::CHANGELOG.md has no '## [$VERSION]' section. Move the Unreleased entries into a section for this version (see docs/RELEASING.md), then re-tag."
+            exit 1
+          fi
+          awk -v ver="$VERSION" '
+            $0 ~ "^## \\[" ver "\\]" { found = 1; next }
+            found && /^## \[/ { exit }
+            found && /^\[.*\]: http/ { exit }
+            found { print }
+          ' CHANGELOG.md > release-notes.md
+          echo "Release notes for $VERSION:"
+          cat release-notes.md
+
+      - name: Build and zip (chrome)
+        run: pnpm zip
+
+      # The firefox zip step also produces the sources zip AMO requires.
+      - name: Build and zip (firefox + AMO sources)
+        run: pnpm zip:firefox
+
+      - name: Build and zip (edge)
+        run: pnpm zip:edge
+
+      - name: Generate SHA-256 checksums
+        run: |
+          cd .output
+          sha256sum ./*.zip > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+
+      # Uploaded even on dry runs so the artifacts can be inspected without
+      # publishing anything.
+      - name: Upload zips as workflow artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: hardcopy-release-zips
+          path: |
+            .output/*.zip
+            .output/SHA256SUMS.txt
+          if-no-files-found: error
+          # .output/ is a dot-directory; without this the upload finds no files.
+          include-hidden-files: true
+
+      - name: Create GitHub Release
+        if: github.ref_type == 'tag' && !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            --title "Hardcopy $GITHUB_REF_NAME" \
+            --notes-file release-notes.md \
+            --verify-tag \
+            .output/*.zip .output/SHA256SUMS.txt
