@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+*.zip
+*.xpi
+*.crx
+
+# Test artifacts
+coverage/
+playwright-report/
+test-results/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Xcode (Safari wrapper)
+xcuserdata/
+DerivedData/
+*.xcuserstate
+
+# Env — never commit secrets
+.env
+.env.*
