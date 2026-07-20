@@ -38,21 +38,21 @@
     "@playwright/test": "^1.61.1",
     "@vitest/coverage-v8": "^4.1.10",
     "axe-core": "^4.12.1",
-    "eslint": "^10.6.0",
+    "eslint": "^10.7.0",
     "eslint-config-prettier": "^10.1.8",
-    "happy-dom": "^20.10.6",
-    "prettier": "^3.9.4",
+    "happy-dom": "^20.11.0",
+    "prettier": "^3.9.5",
     "sharp": "^0.35.3",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.63.0",
-    "vite": "^8.1.3",
+    "typescript-eslint": "^8.64.0",
+    "vite": "^8.1.5",
     "vitest": "^4.1.10",
     "wxt": "^0.20.27"
   },
   "dependencies": {
     "@pdf-lib/fontkit": "^1.1.1",
     "docx": "^9.7.1",
-    "marked": "^18.0.5",
+    "marked": "^18.0.6",
     "pdf-lib": "^1.17.1"
   }
 }
